@@ -1,0 +1,58 @@
+<wicket:extend xmlns:wicket="http://wicket.apache.org">
+	<script>
+		$(document).ready(function() {
+			$("#scheduleTab").addClass("tabSelected");
+		});
+	</script>
+	<table border="0" cellspacing="0" cellpadding="0" width="70%" align="center" class="whiteTable">
+		<tr>
+			<th colspan="7">SCHEDULE - 2014</th>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<th nowrap colspan="3"><u>FRONT NINE</u></th>
+			<th nowrap colspan="3"><u>BACK NINE</u></th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align="center"><b><span wicket:id="frontNineTeeTime1Group1"></span></b></td>
+			<td align="center"><b><span wicket:id="frontNineTeeTime2Group1"></span></b></td>
+			<td align="center"><b><span wicket:id="frontNineTeeTime3Group1"></span></b></td>
+			<td align="center"><b><span wicket:id="backNineTeeTime1Group1"></span></b></td>
+			<td align="center"><b><span wicket:id="backNineTeeTime2Group1"></span></b></td>
+			<td align="center"><b><span wicket:id="backNineTeeTime3Group1"></span></b></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align="center"><b>&amp;</b></td>
+			<td align="center"><b>&amp;</b></td>
+			<td align="center"><b>&amp;</b></td>
+			<td align="center"><b>&amp;</b></td>
+			<td align="center"><b>&amp;</b></td>
+			<td align="center"><b>&amp;</b></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><b>DATE</b></td>
+			<td align="center"><b><span wicket:id="frontNineTeeTime1Group2"></span></b></td>
+			<td align="center"><b><span wicket:id="frontNineTeeTime2Group2"></span></b></td>
+			<td align="center"><b><span wicket:id="frontNineTeeTime3Group2"></span></b></td>
+			<td align="center"><b><span wicket:id="backNineTeeTime1Group2"></span></b></td>
+			<td align="center"><b><span wicket:id="backNineTeeTime2Group2"></span></b></td>
+			<td align="center"><b><span wicket:id="backNineTeeTime3Group2"></span></b></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr wicket:id="week" valign="top">
+			<td nowrap><span wicket:id="weekDate"></span></td>
+			<td nowrap><span wicket:id="frontNineTeeTime1"></span></td>
+			<td nowrap><span wicket:id="frontNineTeeTime2"></span></td>
+			<td nowrap><span wicket:id="frontNineTeeTime3"></span></td>
+			<td nowrap><span wicket:id="backNineTeeTime1"></span></td>
+			<td nowrap><span wicket:id="backNineTeeTime2"></span></td>
+			<td nowrap><span wicket:id="backNineTeeTime3"></span></td>
+			<td><a wicket:id="editWeekLink">Edit</a></td>
+		</tr>
+	</table>
+</wicket:extend>

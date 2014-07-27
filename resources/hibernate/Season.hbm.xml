@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.stj.model">
+	<class name="Season" table="STJ_SEASON">
+		<id name="id" column="SEASON_ID" type="integer" unsaved-value="null">
+			<generator class="native" />
+		</id>
+
+		<property name="createdDate" type="timestamp" column="CRTN_DT" />
+
+		<property name="createdUserId" type="string" length="8" column="CRTN_USER_ID" />
+
+		<property name="lastUpdatedDate" type="timestamp" column="LAST_UPTD_DT" />
+
+		<property name="lastUpdatedUserId" type="string" length="8" column="LAST_UPTD_USER_ID" />
+
+		<property name="year" column="YEAR" type="integer" />
+
+		<set name="rounds" cascade="all-delete-orphan" lazy="false">
+			<key column="SEASON_ID"></key>
+			<one-to-many class="Round" />
+		</set>
+
+		<bag name="teams" table="STJ_SEASON_TEAM" cascade="all-delete-orphan" order-by="TEAM_ID" lazy="false">
+			<key>
+				<column name="SEASON_ID" />
+			</key>
+			<many-to-many class="Team" column="TEAM_ID" />
+		</bag>
+		
+	</class>
+</hibernate-mapping>

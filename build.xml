@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="stjames" default="deploy" basedir=".">
+
+	<!-- ===================================================================== -->
+	<!-- define global properties                                              -->
+	<!-- ===================================================================== -->
+
+	<property name="build.dir" value="build" />
+	<property name="deploy.dir" value="deploy" />
+
+	<property name="classes.dir" value="${build.dir}/classes" />
+	<property name="webapp.dir" value="WebContent/WEB-INF" />
+
+	<target name="deploy">
+		<mkdir dir="${deploy.dir}/classes" />
+
+		<copy todir="${deploy.dir}/classes">
+			<fileset dir="${classes.dir}" />
+		</copy>
+		<copy todir="${deploy.dir}">
+			<fileset dir="${webapp.dir}" />
+		</copy>
+	</target>
+
+	<target name="clean">
+		<delete dir="${deploy.dir}" />
+		<mkdir dir="${deploy.dir}" />
+	</target>
+
+</project>

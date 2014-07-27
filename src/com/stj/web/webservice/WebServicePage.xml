@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<external xmlns:wicket="http://wicket.sourceforge.net/">
+	<data wicket:id="data"></data>
+</external>

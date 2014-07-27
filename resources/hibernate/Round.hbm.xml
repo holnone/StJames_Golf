@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.stj.model">
+	<class name="Round" table="STJ_ROUND">
+		<id name="id" column="ROUND_ID" type="integer" unsaved-value="null">
+			<generator class="native" />
+		</id>
+
+		<property name="name" column="NAME" type="string" />
+		
+		<property name="seasonId" column="SEASON_ID" type="integer" />
+
+		<set name="weeks" cascade="all-delete-orphan" lazy="false">
+			<key column="ROUND_ID"></key>
+			<one-to-many class="Week" />
+		</set>
+
+	</class>
+</hibernate-mapping>

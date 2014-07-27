@@ -1,0 +1,40 @@
+<wicket:extend xmlns:wicket="http://wicket.apache.org">
+	<script>
+		$(document).ready(function() {
+			$("#rosterTab").addClass("tabSelected");
+		});
+	</script>
+	<table border="0" cellspacing="0" cellpadding="0" align="center" width="70%" class="whiteTable">
+		<tr wicket:id="repeater">
+			<td>
+				<table border="0" cellspacing="0" cellpadding="0" width="100%">
+					<tr class="highlight">
+						<td colspan="5" width="50%" nowrap><a wicket:id="team1Link"></a><a wicket:id="team1EditLink"> <b>Edit</b></a></td>
+						<td colspan="5" width="50%" nowrap><a wicket:id="team2Link"></a><a wicket:id="team2EditLink"> <b>Edit</b></a></td>
+					</tr>
+					<tr>
+						<th colspan="2">&nbsp;</th>
+						<th nowrap><span wicket:id="last5Scores1"></span></th>
+						<th><span wicket:id="hdcp1"></span></th>
+						<th colspan="3">&nbsp;</th>
+						<th nowrap><span wicket:id="last5Scores2"></span></th>
+						<th><span wicket:id="hdcp2"></span></th>
+					</tr>
+					<tr wicket:id="playerRepeater">
+						<td nowrap><span wicket:id="deactivatePlayer1"></span></td>
+						<td nowrap><a wicket:id="playerLink1"></a></td>
+						<td nowrap><span wicket:id="scores1"></span></td>
+						<td><span wicket:id="hdcp1"></span></td>
+						<td>&nbsp;</td>
+						<td nowrap><span wicket:id="deactivatePlayer2"></span></td>
+						<td nowrap><a wicket:id="playerLink2"></a></td>
+						<td nowrap><span wicket:id="scores2"></span></td>
+						<td><span wicket:id="hdcp2"></span></td>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</wicket:extend>
+

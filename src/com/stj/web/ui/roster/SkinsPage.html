@@ -1,0 +1,76 @@
+<wicket:extend xmlns:wicket="http://wicket.apache.org" xmlns:ric="http://www.uprr.com/ricola">
+	<script>
+		$(document).ready(function() {
+			$("#skinsTab").addClass("tabSelected");
+		});
+	</script>
+	<div id="publicMessage">
+		<b><span wicket:id="publicMessage"></span></b><br/><br/>
+	</div>
+	<div>
+		<div>
+			<table border="0" cellspacing="0" cellpadding="4" align="center">
+				<tr>
+					<td>
+						<label>Week:</label>
+					</td>
+					<td>
+						<select wicket:id="weekChoice"></select>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div wicket:id="skinsContainer">
+			<table cellspacing="0" cellpadding="4" class="dataview" align="center">
+				<tr>
+					<td colspan="8">
+						<table border="0" cellpadding="4" cellspacing="0">
+							<tr>
+								<th>Player</th>
+								<th>1</th>
+								<th>2</th>
+								<th>3</th>
+								<th>4</th>
+								<th>5</th>
+								<th>6</th>
+								<th>7</th>
+								<th>8</th>
+								<th>9</th>
+								<th>10</th>
+								<th>11</th>
+								<th>12</th>
+								<th>13</th>
+								<th>14</th>
+								<th>15</th>
+								<th>16</th>
+								<th>17</th>
+								<th>18</th>
+							</tr>
+							<tr wicket:id="repeater">
+								<td nowrap><span wicket:id="playerName"></span></td>
+								<td nowrap><span wicket:id="hole1"></span></td>
+								<td nowrap><span wicket:id="hole2"></span></td>
+								<td nowrap><span wicket:id="hole3"></span></td>
+								<td nowrap><span wicket:id="hole4"></span></td>
+								<td nowrap><span wicket:id="hole5"></span></td>
+								<td nowrap><span wicket:id="hole6"></span></td>
+								<td nowrap><span wicket:id="hole7"></span></td>
+								<td nowrap><span wicket:id="hole8"></span></td>
+								<td nowrap><span wicket:id="hole9"></span></td>
+								<td nowrap><span wicket:id="hole10"></span></td>
+								<td nowrap><span wicket:id="hole11"></span></td>
+								<td nowrap><span wicket:id="hole12"></span></td>
+								<td nowrap><span wicket:id="hole13"></span></td>
+								<td nowrap><span wicket:id="hole14"></span></td>
+								<td nowrap><span wicket:id="hole15"></span></td>
+								<td nowrap><span wicket:id="hole16"></span></td>
+								<td nowrap><span wicket:id="hole17"></span></td>
+								<td nowrap><span wicket:id="hole18"></span></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</wicket:extend>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.stj.model">
+	<class name="PreRound" table="STJ_PRE_ROUND" >
+		
+		<id name="id" column="PRE_ROUND_ID" type="integer" unsaved-value="null">
+			<generator class="native" />
+		</id> 
+
+		<property name="createdDate" type="timestamp" column="CRTN_DT" />
+
+		<property name="createdUserId" type="string" length="8" column="CRTN_USER_ID" />
+
+		<property name="lastUpdatedDate" type="timestamp" column="LAST_UPTD_DT" />
+
+		<property name="lastUpdatedUserId" type="string" length="8" column="LAST_UPTD_USER_ID" />
+
+		<many-to-one name="player" column="PLAYER_ID" class="Player" />
+
+		<property name="score" column="SCORE" type="integer" />
+		
+		<property name="scoreDate" column="SCORE_DATE" type="timestamp" />
+
+		<many-to-one name="side" column="SIDE_ID" class="Side" lazy="false"/>
+
+	</class>
+</hibernate-mapping>

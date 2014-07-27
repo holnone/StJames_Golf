@@ -1,0 +1,193 @@
+<wicket:extend xmlns:wicket="http://wicket.apache.org">
+	<script>
+		$(document).ready(function() {
+			$("#homeTab").addClass("tabSelected");
+		});
+	</script>
+	<div id="publicMessage">
+		<b><span wicket:id="publicMessage"></span></b>
+	</div>
+	<table class="content" border="0" cellspacing="0" cellpadding="0" align="center" width="100%">
+		<tr>
+			<td width="50%" valign="top">
+				<table border="0" cellspacing="0" cellpadding="4" align="center" width="100%" class="whiteTable">
+					<tr><th colspan="8">SCHEDULE - 2014&nbsp;&nbsp;<a wicket:id="viewSchedulePdf" target="_blank">View Pdf</a></th></tr>
+					<tr>
+						<th>&nbsp;</th>
+						<th nowrap colspan="3" class="highlight">FRONT NINE</th>
+						<th>|</th>
+						<th nowrap colspan="3" class="highlight">BACK NINE</th>
+					</tr>
+					<tr>
+						<th>&nbsp;</th>
+						<th align="center"><span wicket:id="frontNineTeeTime1Group1"></span></th>
+						<th align="center"><span wicket:id="frontNineTeeTime2Group1"></span></th>
+						<th align="center"><span wicket:id="frontNineTeeTime3Group1"></span></th>
+						<th>|</th>
+						<th align="center"><span wicket:id="backNineTeeTime1Group1"></span></th>
+						<th align="center"><span wicket:id="backNineTeeTime2Group1"></span></th>
+						<th align="center"><span wicket:id="backNineTeeTime3Group1"></span></th>
+					</tr>
+					<tr>
+						<th>&nbsp;</th>
+						<th align="center">&amp;</th>
+						<th align="center">&amp;</th>
+						<th align="center">&amp;</th>
+						<th>|</th>
+						<th align="center">&amp;</th>
+						<th align="center">&amp;</th>
+						<th align="center">&amp;</th>
+					</tr>
+					<tr>
+						<th>DATE</th>
+						<th align="center"><span wicket:id="frontNineTeeTime1Group2"></span></th>
+						<th align="center"><span wicket:id="frontNineTeeTime2Group2"></span></th>
+						<th align="center"><span wicket:id="frontNineTeeTime3Group2"></span></th>
+						<th>|</th>
+						<th align="center"><span wicket:id="backNineTeeTime1Group2"></span></th>
+						<th align="center"><span wicket:id="backNineTeeTime2Group2"></span></th>
+						<th align="center"><span wicket:id="backNineTeeTime3Group2"></span></th>
+					</tr>
+					<tr><th colspan="8"><hr/></th></tr>
+					<tr wicket:id="round1" valign="top">
+						<th nowrap><span wicket:id="weekDate"></span></th>
+						<th nowrap><span wicket:id="frontNineTeeTime1" align="center"></span></th>
+						<th nowrap><span wicket:id="frontNineTeeTime2" align="center"></span></th>
+						<th nowrap><span wicket:id="frontNineTeeTime3" align="center"></span></th>
+						<th>|</th>
+						<th nowrap><span wicket:id="backNineTeeTime1" align="center"></span></th>
+						<th nowrap><span wicket:id="backNineTeeTime2" align="center"></span></th>
+						<th nowrap><span wicket:id="backNineTeeTime3" align="center"></span></th>
+					</tr>
+					<tr>
+						<th nowrap colspan="8">*************END OF ROUND 1*************</th>
+					</tr>
+					<tr wicket:id="round2" valign="top">
+						<th nowrap><span wicket:id="weekDate"></span></th>
+						<th nowrap><span wicket:id="frontNineTeeTime1" align="center"></span></th>
+						<th nowrap><span wicket:id="frontNineTeeTime2" align="center"></span></th>
+						<th nowrap><span wicket:id="frontNineTeeTime3" align="center"></span></th>
+						<th>|</th>
+						<th nowrap><span wicket:id="backNineTeeTime1" align="center"></span></th>
+						<th nowrap><span wicket:id="backNineTeeTime2" align="center"></span></th>
+						<th nowrap><span wicket:id="backNineTeeTime3" align="center"></span></th>
+					</tr>
+					<tr valign="top">
+						<th nowrap><span wicket:id="playoffDate"></span></th>
+						<th nowrap colspan="7">*************PLAYOFF WEEK*************</th>
+					</tr>
+				</table>
+			</td>
+			<td width="50%" valign="top">
+				<table border="0" cellspacing="0" cellpadding="0" align="center" width="100%" class="whiteTable">
+					<tr>
+						<th colspan="3">
+							<span style="font-size: 16px;">Standings</span>&nbsp;&nbsp;as of&nbsp;&nbsp;<select wicket:id="weekChoice"></select>&#160;<a wicket:id="viewPdf" target="_blank">View Pdf</a>
+						</th>
+					</tr>
+					<tr>
+						<td width="50%">
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<th colspan="3">
+										<span style="font-size: 18px;">Round 1</span>
+									</th>
+								</tr>
+								<tr wicket:id="repeater1">
+									<td nowrap><span wicket:id="teamPlace"></span></td>
+									<td nowrap><span wicket:id="teamName"></span></td>
+									<td nowrap><span wicket:id="teamPoints"></span></td>
+								</tr>
+							</table> 
+						</td>
+						<td width="50%">
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<th colspan="3">
+										<span style="font-size: 18px;">Round 2</span>
+									</th>
+								</tr>
+								<tr wicket:id="repeater2">
+									<td nowrap><span wicket:id="teamPlace"></span></td>
+									<td nowrap><span wicket:id="teamName"></span></td>
+									<td nowrap><span wicket:id="teamPoints"></span></td>
+								</tr>
+							</table> 
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<span>League Low Net:</span>
+						</th>
+						<td nowrap>
+							<div wicket:id="lowNetRepeater">
+								<span wicket:id="lowNet"></span>
+								<br/>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<span>League Low Gross: </span>
+						</th>
+						<td nowrap>
+							<div wicket:id="lowGrossRepeater">
+								<span wicket:id="lowGross"></span>
+								<br/>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<span>1st Round Individual Points: </span>
+						</th>
+						<td nowrap>
+							<div wicket:id="firstRoundIndividualRepeater">
+								<span wicket:id="individualPoints"></span>
+								<br/>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<span>2nd Round Individual Points: </span>
+						</th>
+						<td nowrap>
+							<div wicket:id="secondRoundIndividualRepeater">
+								<span wicket:id="individualPoints"></span>
+								<br/>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/><!-- 
+				<div id="wx_module_369">
+				   <a href="http://www.weather.com/weather/local/68122">Omaha Weather Forecast, NE (68122)</a>
+				</div>
+				
+				<script type="text/javascript">
+				
+				   /* Locations can be edited manually by updating 'wx_locID' below.  Please also update */
+				   /* the location name and link in the above div (wx_module) to reflect any changes made. */
+				   var wx_locID = '68122';
+				
+				   /* If you are editing locations manually and are adding multiple modules to one page, each */
+				   /* module must have a unique div id.  Please append a unique # to the div above, as well */
+				   /* as the one referenced just below.  If you use the builder to create individual modules  */
+				   /* you will not need to edit these parameters. */
+				   var wx_targetDiv = 'wx_module_369';
+				
+				   /* Please do not change the configuration value [wx_config] manually - your module */
+				   /* will no longer function if you do.  If at any time you wish to modify this */
+				   /* configuration please use the graphical configuration tool found at */
+				   /* https://registration.weather.com/ursa/wow/step2 */
+				   var wx_config='SZ=300x250*WX=WCH*LNK=SSNL*UNT=F*BGI=golf*MAP=null|null*DN=stjamesgolfleague.com*TIER=0*PID=1250614806*MD5=acf87fd2af7d2014807796da6b382e8a';
+				
+				   document.write('<scr'+'ipt src="'+document.location.protocol+'//wow.weather.com/weather/wow/module/'+wx_locID+'?config='+wx_config+'&proto='+document.location.protocol+'&target='+wx_targetDiv+'"></scr'+'ipt>');  
+				</script> -->
+			</td>
+		</tr>
+	</table>
+	<div wicket:id="pdfModal"></div>
+</wicket:extend>
+

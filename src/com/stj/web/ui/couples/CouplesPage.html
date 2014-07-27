@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
+    <head>  
+        <title>St. James/St. Elizabeth Ann Couples Golf</title>
+    </head>
+    <body>
+    	<div id="couples_outer_wrapper">
+	    	<table class="couples_content" border="0" cellspacing="0" cellpadding="0" width="900" align="center">
+	    		<tr>
+	    			<td align="center" height="60" id="couples_framecontent">
+	    				St. James/St. Elizabeth Ann Couples Golf
+					</td>
+	    		</tr>
+	    		<tr>
+	    			<td id="couples_maincontent">
+	    				<table class="couples_content" border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+	    					<tr>
+	    						<td>
+	    							<div wicket:id="feedbackPanel" class="feedback"></div>
+	    						</td>
+	    					</tr>
+	    					<tr>
+	    						<td id="couples_child">
+    								<table border="0" cellspacing="0" cellpadding="0" align="center">
+										<tr>
+											<td width="40%" valign="top">
+												<table border="1" cellspacing="0" cellpadding="4">
+													<tr>
+														<th>TEAM #</th>
+														<th>PLAYERS</th>
+													</tr>
+													<tr wicket:id="teamRepeater">
+														<td align="center"><span wicket:id="teamNumber"></span></td>
+														<td>
+															<span wicket:id="teamName"></span>
+														</td>
+													</tr>
+												</table>
+											</td>
+											<td width="60%" valign="top">
+												<table border="1" cellspacing="0" cellpadding="4" class="schedule" id="golfSchedule">
+													<tr>
+														<th wicket:id="dateRepeater"><span wicket:id="date"></span></th>
+													</tr>
+													<tr wicket:id="rowRepeater">
+														<td wicket:id="matchRepeater"><span wicket:id="match"></span></td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+	    						</td>
+	    					</tr>
+	    				</table>
+	    			</td>
+	    		</tr>
+			</table>
+		</div>
+    </body>
+</html>

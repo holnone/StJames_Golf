@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.stj.model">
+	<class name="MessageBoard" table="STJ_MESSAGE_BOARD">
+		<id name="id" column="MESSAGE_BOARD_ID" type="integer" unsaved-value="null">
+			<generator class="native" />
+		</id>
+
+		<property name="createdDate" type="timestamp" column="CREATE_DATE" />
+
+		<property name="userName" type="string" length="50" column="USER_NAME" />
+
+		<property name="message" type="string" column="MESSAGE" />
+		
+		<many-to-one name="season" column="SEASON_ID" class="Season" />
+		
+	</class>
+</hibernate-mapping>

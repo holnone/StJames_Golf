@@ -1,0 +1,94 @@
+<wicket:extend xmlns:wicket="http://wicket.apache.org">
+	<script>
+		$(document).ready(function() {
+			$("#rosterTab").addClass("tabSelected");
+		});
+	</script>
+	<table border="0" cellspacing="0" cellpadding="0" align="center">
+		<tr class="highlight">
+			<td>
+				<label class="bold">Player:</label><select wicket:id="playerChoice"></select>
+				<label class="bold">Year:</label> <select wicket:id="yearChoice"></select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table border="0" cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<th>Date</th>
+						<th>Course</th>
+						<th>Side</th>
+						<th colspan="9">Scores</th>
+						<th>Gross</th>
+						<th>Par</th>
+						<th>Hdcp</th>
+						<th>Net</th>
+						<th>Eags</th>
+						<th>Brds</th>
+						<th>Pars</th>
+						<th>Bgys</th>
+						<th>DbBgs</th>
+						<th>Othr</th>
+					</tr>
+					<tr wicket:id="scoreRepeater">
+						<td nowrap><span wicket:id="scoreDate"></span></td>
+						<td nowrap><span wicket:id="course"></span></td>
+						<td nowrap><span wicket:id="side"></span></td>
+						<td nowrap><span wicket:id="score1"></span></td>
+						<td nowrap><span wicket:id="score2"></span></td>
+						<td nowrap><span wicket:id="score3"></span></td>
+						<td nowrap><span wicket:id="score4"></span></td>
+						<td nowrap><span wicket:id="score5"></span></td>
+						<td nowrap><span wicket:id="score6"></span></td>
+						<td nowrap><span wicket:id="score7"></span></td>
+						<td nowrap><span wicket:id="score8"></span></td>
+						<td nowrap><span wicket:id="score9"></span></td>
+						<td nowrap><span wicket:id="gross"></span></td>
+						<td nowrap><span wicket:id="sidePar"></span></td>
+						<td nowrap><span wicket:id="handicap"></span></td>
+						<td nowrap><span wicket:id="net"></span></td>
+						<td nowrap><span wicket:id="eagles"></span></td>
+						<td nowrap><span wicket:id="birdies"></span></td>
+						<td nowrap><span wicket:id="pars"></span></td>
+						<td nowrap><span wicket:id="bogeys"></span></td>
+						<td nowrap><span wicket:id="doubleBogeys"></span></td>
+						<td nowrap><span wicket:id="others"></span></td>
+					</tr>
+					<tr>
+						<td colspan="12"><span class="bold">Average</span></td>
+						<td><span wicket:id="avgGross"></span></td>
+						<td colspan="2">&#160;</td>
+						<td><span wicket:id="avgNet"></span></td>
+						<td><span wicket:id="totalEagles"></span></td>
+						<td><span wicket:id="totalBirdies"></span></td>
+						<td><span wicket:id="totalPars"></span></td>
+						<td><span wicket:id="totalBogeys"></span></td>
+						<td><span wicket:id="totalDoubleBogeys"></span></td>
+						<td><span wicket:id="totalOthers"></span></td>
+					</tr>
+					<tr>
+						<td>Par 3</td>
+						<td><span wicket:id="par3Average"></span></td>
+						<td colspan="20">&#160;</td>
+					</tr>
+					<tr>
+						<td>Par 4</td>
+						<td><span wicket:id="par4Average"></span></td>
+						<td colspan="20">&#160;</td>
+					</tr>
+					<tr>
+						<td>Par 5</td>
+						<td><span wicket:id="par5Average"></span></td>
+						<td colspan="20">&#160;</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">
+				<img wicket:id="leagueAverage" />
+			</td>
+		</tr>
+	</table>
+</wicket:extend>
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                          http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    
+     <bean id="auditInterceptor" class="com.stj.web.aspect.AuditInterceptor">
+		<property name="lastUpdatedUserPropertyNames">
+			<list>
+				<value>lastUpdatedUserId</value>
+			</list>
+		</property>
+		<property name="lastUpdatedDatePropertyNames">
+			<list>
+				<value>lastUpdatedDate</value>
+			</list>
+		</property>
+		<property name="createdUserPropertyNames">
+			<list>
+				<value>createdUserId</value>
+			</list>
+		</property>
+		<property name="createdDatePropertyNames">
+			<list>
+				<value>createdDate</value>
+			</list>
+		</property>
+	</bean>
+     
+    <!-- Hibernate SessionFactory -->
+    <bean id="baseSessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="entityInterceptor" ref="auditInterceptor" />
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">false</prop>
+            </props>
+        </property>
+    </bean>
+    
+	<bean id="stJamesTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="stjamesWebSessionFactory"/>
+    </bean>
+    
+   	<bean id="stjamesWebSessionFactory" parent="baseSessionFactory">
+        <property name="mappingResources">
+            <list>
+            	<value>hibernate/ApplicationProperty.hbm.xml</value>
+                <value>hibernate/Score.hbm.xml</value>
+                <value>hibernate/Player.hbm.xml</value>
+                <value>hibernate/WeeklyScore.hbm.xml</value>
+                <value>hibernate/PreRound.hbm.xml</value>
+                <value>hibernate/Season.hbm.xml</value>
+                <value>hibernate/Team.hbm.xml</value>
+                <value>hibernate/TeamMatch.hbm.xml</value>
+                <value>hibernate/TeamScore.hbm.xml</value>
+                <value>hibernate/Week.hbm.xml</value>
+                <value>hibernate/Course.hbm.xml</value>
+                <value>hibernate/Side.hbm.xml</value>
+                <value>hibernate/Round.hbm.xml</value>
+                <value>hibernate/PlayerSchedule.hbm.xml</value>
+                <value>hibernate/MessageBoard.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>

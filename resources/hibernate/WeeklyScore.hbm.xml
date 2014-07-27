@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.stj.model">
+	<class name="WeeklyScore" table="STJ_WEEKLY_SCORE">
+		<id name="id" column="WEEKLY_SCORE_ID" type="integer" unsaved-value="null">
+			<generator class="native" />
+		</id>
+
+		<property name="createdDate" type="timestamp" column="CRTN_DT" />
+
+		<property name="createdUserId" type="string" length="8" column="CRTN_USER_ID" />
+
+		<property name="lastUpdatedDate" type="timestamp" column="LAST_UPTD_DT" />
+
+		<property name="lastUpdatedUserId" type="string" length="8" column="LAST_UPTD_USER_ID" />
+
+		<property name="handicap" column="HANDICAP" type="integer" />
+
+		<property name="scoreDate" column="SCORE_DATE" type="timestamp" />
+
+		<property name="hole1Score" column="HOLE_1_SCORE" type="integer" />
+		<property name="hole2Score" column="HOLE_2_SCORE" type="integer" />
+		<property name="hole3Score" column="HOLE_3_SCORE" type="integer" />
+		<property name="hole4Score" column="HOLE_4_SCORE" type="integer" />
+		<property name="hole5Score" column="HOLE_5_SCORE" type="integer" />
+		<property name="hole6Score" column="HOLE_6_SCORE" type="integer" />
+		<property name="hole7Score" column="HOLE_7_SCORE" type="integer" />
+		<property name="hole8Score" column="HOLE_8_SCORE" type="integer" />
+		<property name="hole9Score" column="HOLE_9_SCORE" type="integer" />
+
+		<many-to-one name="player" column="PLAYER_ID" class="Player" lazy="false"/>
+
+		<many-to-one name="side" column="SIDE_ID" class="Side" lazy="false" />
+
+		<many-to-one name="teamScore" column="TEAM_SCORE_ID" class="TeamScore" />
+
+		<property name="ghostScore" column="GHOST_FLG" type="yes_no" length="1" />
+
+	</class>
+</hibernate-mapping>

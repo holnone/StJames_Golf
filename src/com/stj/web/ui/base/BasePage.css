@@ -1,0 +1,162 @@
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	overflow: auto;
+	height: 100%;
+	max-height: 100%;
+	font: bold 11px/ 1.5em Verdana;
+	background-color: black;
+	text-align: center;
+}
+
+#outer_wrapper {
+	background-color: #1CB536;
+	background-image: url(gradient_green.png);
+	background-position: left top;
+	background-repeat: repeat-x;
+	height: 100%;
+}
+
+table.content {
+	background-color: #1CB536;
+	background-image: url(main_content_900x20.png);
+}
+
+.scheduleContainer {
+	max-height: 150px;
+	overflow: auto;
+}
+
+.messageBoardContainer {
+	max-height: 250px;
+	overflow: auto;
+}
+
+#framecontent {
+	color: white;
+	vertical-align: middle;
+	background-image: url(main_content_900x20.png);
+	background-position: left top;
+	background-repeat: repeat-y;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+}
+
+div.feedback {
+	font-weight: bold;
+	color: #fff;
+}
+
+#publicMessage {
+	width: 900px;
+	text-align: center;
+	color: #000;
+	font-size: medium;
+}
+
+#maincontent {
+	text-align: center;
+	background-image: url(main_content_900x20.png);
+	background-position: left top;
+	background-repeat: repeat-y;
+}
+
+#child {
+	align: center;
+}
+
+#tabs {
+	font-size: 93%;
+	line-height: normal;
+	background-image: url(main_content_900x20.png);
+	background-position: left top;
+	background-repeat: repeat-y;
+}
+
+#tabs {
+	background-image: url(main_content_900x20.png);
+	background-position: left top;
+	background-repeat: repeat-y;
+}
+
+#tabs ul {
+	margin: 0;
+	padding: 10px 10px 0 50px;
+	list-style: none;
+}
+
+#tabs li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+#tabs a {
+	float: left;
+	background: url("tableft.gif") no-repeat left top;
+	margin: 0;
+	padding: 0 0 0 4px;
+	text-decoration: none;
+}
+
+#tabs a span {
+	float: left;
+	display: block;
+	background: url("tabright.gif") no-repeat right top;
+	padding: 5px 15px 4px 6px;
+	color: #464E42;
+	font-weight: bold;
+}
+
+#tabs a span {
+	float: none;
+}
+
+#tabs a:hover {
+	background-position: 0% -42px;
+}
+
+#tabs a:hover span {
+	background-position: 100% -42px;
+	color: #FFF;
+}
+
+#tabs li.tabSelected a {
+	background-position: 0% -42px;
+}
+
+#tabs li.tabSelected a span {
+	color: #FFF;
+	background-position: 100% -42px;
+}
+
+.holeInput {
+	width: 40px;
+}
+
+.handicap {
+	color: red;
+	text-align: right;
+	font-weight: bold;
+}
+
+.playerName {
+	font-weight: bold;
+}
+
+.holeWon {
+	color: red;
+	font-weight: bold;
+}
+
+.bold {
+	font-weight: bold !important;
+}
+
+.lowScore {
+	background-color: red;
+	color: white;
+	font-weight: bold;
+}

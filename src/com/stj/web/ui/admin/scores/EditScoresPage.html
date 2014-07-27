@@ -1,0 +1,86 @@
+<wicket:extend xmlns:wicket="http://wicket.apache.org" xmlns:ric="http://www.uprr.com/ricola">
+	<script>
+		$(document).ready(function() {
+			$("#scoresTab").addClass("tabSelected");
+		});
+	</script>
+	<div>
+		<form wicket:id="form">
+			<div>
+				<table border="0" cellspacing="0" cellpadding="4" align="center">
+					<tr>
+						<td>
+							<label>Week:</label>
+						</td>
+						<td>
+							<label wicket:id="selectedWeek"></label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="medium">Team Matchup:</label>
+						</td>
+						<td>
+							<label wicket:id="teamMatch"></label>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div wicket:id="matchContainer">
+				<table cellspacing="0" cellpadding="4" class="dataview" align="center">
+					<tr>
+						<td colspan="8">
+							<table border="0" cellpadding="4" cellspacing="0">
+								<tr>
+									<td>
+										<div align="center" style="clear: both; margin-top: 15px;">
+											<input type="button" value="Calculate" wicket:id="calculateButton" />
+											<input type="submit" value="Save Matchup" wicket:id="saveButton" />
+											<input type="button" value="Cancel" wicket:id="cancelButton" />
+										</div>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr><td colspan="8"><hr color="green"/></td></tr>
+					<tr>
+						<td nowrap><label wicket:id="matchLabel">:</label></td>
+						<td nowrap colspan="2">&nbsp;</td>
+						<td nowrap><span wicket:id="matchHoleLabel"></span></td>
+						<td nowrap rowspan="2"><label>GROSS</label></td>
+						<td nowrap rowspan="2">NET</td>
+						<td nowrap rowspan="2">NET<br/>PTS</td>
+						<td nowrap rowspan="2">HOLE<br/>PTS</td>
+					</tr>
+					<tr>
+						<td nowrap><label wicket:id="matchCourse"></label></td>
+						<td nowrap><select wicket:id="matchSide"></select></td>
+						<td nowrap>HDCP</td>
+						<td nowrap><span wicket:id="matchHoleHdcp"></span></td>
+					</tr>
+					<tr>
+						<td nowrap><span wicket:id="matchTeam1"></span></td>
+						<td nowrap><select wicket:id="matchTeam1Player"></select></td>
+						<td nowrap><label wicket:id="matchTeam1PlayerHdcp"></label></td>
+						<td nowrap><span wicket:id="matchTeam1PlayerHole"></span></td>
+						<td nowrap><label wicket:id="matchTeam1PlayerGross"></label></td>
+						<td nowrap><label wicket:id="matchTeam1PlayerNet"></label></td>
+						<td nowrap><label wicket:id="matchTeam1PlayerNetPoints"></label></td>
+						<td nowrap><label wicket:id="matchTeam1PlayerHolePoints"></label></td>
+					</tr>
+					<tr>
+						<td nowrap><span wicket:id="matchTeam2"></span></td>
+						<td nowrap><select wicket:id="matchTeam2Player"></select></td>
+						<td nowrap><label wicket:id="matchTeam2PlayerHdcp"></label></td>
+						<td nowrap><span wicket:id="matchTeam2PlayerHole"></span></td>
+						<td nowrap><label wicket:id="matchTeam2PlayerGross"></label></td>
+						<td nowrap><label wicket:id="matchTeam2PlayerNet"></label></td>
+						<td nowrap><label wicket:id="matchTeam2PlayerNetPoints"></label></td>
+						<td nowrap><label wicket:id="matchTeam2PlayerHolePoints"></label></td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
+</wicket:extend>

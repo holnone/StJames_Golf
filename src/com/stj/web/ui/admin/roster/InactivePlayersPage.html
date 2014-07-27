@@ -1,0 +1,30 @@
+<wicket:extend xmlns:wicket="http://wicket.apache.org">
+	<script>
+		$(document).ready(function() {
+			$("#inactivePlayersTab").addClass("tabSelected");
+		});
+	</script>
+	<table border="0" cellspacing="0" cellpadding="0" align="center" width="70%" class="whiteTable">
+		<tr wicket:id="repeater">
+			<td>
+				<table border="0" cellspacing="0" cellpadding="0" width="100%">
+					<tr class="highlight">
+						<td colspan="4" nowrap><span wicket:id="inactivePlayers"></span></td>
+					</tr>
+					<tr>
+						<th colspan="2">&nbsp;</th>
+						<th nowrap><span wicket:id="last5Scores"></span></th>
+						<th><span wicket:id="hdcp"></span></th>
+					</tr>
+					<tr wicket:id="playerRepeater">
+						<td nowrap><span wicket:id="activatePlayer"></span></td>
+						<td nowrap><a wicket:id="playerLink"></a></td>
+						<td nowrap><span wicket:id="scores"></span></td>
+						<td><span wicket:id="hdcp"></span></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</wicket:extend>
+

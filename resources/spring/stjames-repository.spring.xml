@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/integration" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<beans:bean id="baseHibernateRepository" class="com.stj.repo.BaseHibernateRepository" abstract="true">
+		<beans:property name="sessionFactory" ref="stjamesWebSessionFactory" />
+	</beans:bean>
+
+	<beans:bean id="seasonRepository" class="com.stj.repo.impl.HibernateSeasonRepository" parent="baseHibernateRepository" />
+	<beans:bean id="teamRepository" class="com.stj.repo.impl.HibernateTeamRepository" parent="baseHibernateRepository" />
+	<beans:bean id="teamMatchRepository" class="com.stj.repo.impl.HibernateTeamMatchRepository" parent="baseHibernateRepository" />
+	<beans:bean id="sideRepository" class="com.stj.repo.impl.HibernateSideRepository" parent="baseHibernateRepository" />
+	<beans:bean id="courseRepository" class="com.stj.repo.impl.HibernateCourseRepository" parent="baseHibernateRepository" />
+	<beans:bean id="playerRepository" class="com.stj.repo.impl.HibernatePlayerRepository" parent="baseHibernateRepository" />
+	<beans:bean id="weekRepository" class="com.stj.repo.impl.HibernateWeekRepository" parent="baseHibernateRepository" />
+	<beans:bean id="weeklyScoreRepository" class="com.stj.repo.impl.HibernateWeeklyScoreRepository" parent="baseHibernateRepository" />
+	<beans:bean id="applicationPropertyRepository" class="com.stj.repo.impl.HibernateApplicationPropertyRepository" parent="baseHibernateRepository" />
+	<beans:bean id="messageBoardRepository" class="com.stj.repo.impl.HibernateMessageBoardRepository" parent="baseHibernateRepository" />
+
+</beans:beans>

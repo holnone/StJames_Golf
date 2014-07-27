@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.stj.model">
+	<class name="Course" table="STJ_COURSE">
+		<id name="id" column="COURSE_ID" type="integer" unsaved-value="null">
+			<generator class="native" />
+		</id>
+
+		<discriminator type="string" column="COURSE_TYPE" not-null="true" />
+
+		<property name="name" type="string" column="name" />
+
+		<property name="createdDate" type="timestamp" column="CRTN_DT" />
+
+		<property name="createdUserId" type="string" length="8" column="CRTN_USER_ID" />
+
+		<property name="lastUpdatedDate" type="timestamp" column="LAST_UPTD_DT" />
+
+		<property name="lastUpdatedUserId" type="string" length="8" column="LAST_UPTD_USER_ID" />
+
+		<set name="sides" cascade="all-delete-orphan" lazy="false">
+			<key column="COURSE_ID"></key>
+			<one-to-many class="Side" />
+		</set>
+
+		<subclass name="TheKnolls" discriminator-value="KN" />
+		
+		<subclass name="TheKnolls2013" discriminator-value="K2" />
+
+		<subclass name="Ironwood" discriminator-value="IW" />
+
+	</class>
+</hibernate-mapping>

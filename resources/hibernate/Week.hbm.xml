@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.stj.model">
+	<class name="Week" table="STJ_WEEK">
+		<id name="id" column="WEEK_ID" type="integer"  unsaved-value="null">
+			<generator class="native" />
+		</id>
+
+		<property name="createdDate" type="timestamp" column="CRTN_DT" />
+
+		<property name="createdUserId" type="string" length="8" column="CRTN_USER_ID" />
+
+		<property name="lastUpdatedDate" type="timestamp" column="LAST_UPTD_DT" />
+
+		<property name="lastUpdatedUserId" type="string" length="8" column="LAST_UPTD_USER_ID" />
+
+		<property name="date" column="WK_DATE" type="timestamp" />
+
+		<many-to-one name="frontNineTeeTime1" column="TEAM_MATCH_1_ID" class="TeamMatch" cascade="all" lazy="false"/>
+
+		<many-to-one name="frontNineTeeTime2" column="TEAM_MATCH_2_ID" class="TeamMatch" cascade="all" lazy="false"/>
+
+		<many-to-one name="backNineTeeTime1" column="TEAM_MATCH_3_ID" class="TeamMatch" cascade="all" lazy="false"/>
+
+		<many-to-one name="backNineTeeTime2" column="TEAM_MATCH_4_ID" class="TeamMatch" cascade="all" lazy="false"/>
+
+		<many-to-one name="frontNineTeeTime3" column="TEAM_MATCH_5_ID" class="TeamMatch" cascade="all" lazy="false"/>
+		
+		<many-to-one name="backNineTeeTime3" column="TEAM_MATCH_6_ID" class="TeamMatch" cascade="all" lazy="false"/>
+
+		<many-to-one name="round" column="ROUND_ID" class="Round" />
+		
+	</class>
+</hibernate-mapping>

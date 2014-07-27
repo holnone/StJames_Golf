@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.stj.model">
+	<class name="PlayerSchedule" table="STJ_TEAM_SCHEDULE">
+		<id name="id" column="TEAM_SCHEDULE_ID" type="integer" unsaved-value="null">
+			<generator class="native" />
+		</id>
+
+		<many-to-one name="team" column="TEAM_ID" class="Team" lazy="false"/>
+		<many-to-one name="week" column="WEEK_ID" class="Week" lazy="false"/>
+
+		<set name="players" cascade="all" lazy="false" table="STJ_TEAM_SCHEDULE_PLAYERS">
+			<key column="TEAM_SCHEDULE_ID"></key>
+			<many-to-many column="PLAYER_ID" class="Player" />
+		</set>
+		
+	</class>
+</hibernate-mapping>

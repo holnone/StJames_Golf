@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.stj.model">
+	<class name="Side" table="STJ_SIDE">
+		<id name="id" column="SIDE_ID" type="integer" unsaved-value="null">
+			<generator class="native" />
+		</id>
+
+		<discriminator type="string" column="SIDE_TYPE" not-null="true" />
+
+		<property name="createdDate" type="timestamp" column="CRTN_DT" />
+
+		<property name="createdUserId" type="string" length="8" column="CRTN_USER_ID" />
+
+		<property name="lastUpdatedDate" type="timestamp" column="LAST_UPTD_DT" />
+
+		<property name="lastUpdatedUserId" type="string" length="8" column="LAST_UPTD_USER_ID" />
+
+		<many-to-one name="course" column="COURSE_ID" class="Course" lazy="false"/>
+
+		<subclass name="FrontNine" discriminator-value="FT" />
+
+		<subclass name="BackNine" discriminator-value="BK" />
+
+	</class>
+</hibernate-mapping>

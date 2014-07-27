@@ -1,0 +1,39 @@
+table {
+	background: #FFF;
+	border: 0px;
+	border-collapse: collapse;
+	color: #fff;
+	font: normal 12px verdana, arial, helvetica, sans-serif;
+}
+
+caption {
+	border: 0px;
+	color: #5C443A;
+	font-weight: bold;
+	letter-spacing: 20px;
+	padding: 6px 4px 8px 0px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+td,th {
+	color: #363636;
+	padding: .4em;
+	white-space: nowrap;
+}
+
+tbody th {
+	text-align: center;
+	vertical-align: top;
+}
+
+table.schedule td {
+	text-align: center;
+	vertical-align: top;
+}
+
+th.current,td.current {
+	background: #C5D2EC;
+	border: 0px;
+	color: #000000;
+}

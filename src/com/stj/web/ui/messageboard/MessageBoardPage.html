@@ -1,0 +1,56 @@
+<wicket:extend xmlns:wicket="http://wicket.apache.org" xmlns:ric="http://www.uprr.com/ricola">
+	<script>
+		$(document).ready(function() {
+			$("#messageBoardTab").addClass("tabSelected");
+		});
+	</script>
+	<div id="publicMessage">
+		<b><span>Please use this space to put in requests for subs;</span><br/>
+			<span>Reply to requests for subs</span><br/>
+			<span>Or anything else you think the league needs to know.</span><br/>
+			<span>Please keep it clean. ;)</span></b>
+	</div>
+	<div>
+		<form wicket:id="form">
+		<div>
+			<table border="0" cellspacing="0" cellpadding="4" align="center">
+				<tr>
+					<td>
+						<label><b>Name:</b></label>
+					</td>
+					<td>
+						<input type="text" wicket:id="nameText" style="width: 200px;" maxlength="50"/>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top">
+						<label><b>Message:</b></label>
+					</td>
+					<td>
+						<textarea rows="3" cols="75" wicket:id="messageText"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="Save" wicket:id="saveButton" />
+					</td>
+				</tr>
+			</table>
+		</div>
+		</form>
+		<div wicket:id="messageBoardContainer" class="messageBoardContainer">
+			<table id="messageBoard" cellspacing="0" cellpadding="4" class="dataview" align="center">
+				<tr wicket:id="repeater">
+					<td>
+						<div>
+							<span wicket:id="userName"></span> -- <span wicket:id="messageDate"></span>
+							<br/><br/>
+							<span wicket:id="message"></span>
+							<br/><hr/>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</wicket:extend>

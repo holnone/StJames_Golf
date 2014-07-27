@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.stj.model">
+	<class name="Score" table="STJ_SCORE">
+		<id name="id" column="SCORE_ID" type="integer" unsaved-value="null">
+			<generator class="native" />
+		</id>
+
+		<property name="createdDate" type="timestamp" column="CRTN_DT" />
+
+		<property name="createdUserId" type="string" length="8" column="CRTN_USER_ID" />
+
+		<property name="lastUpdatedDate" type="timestamp" column="LAST_UPTD_DT" />
+
+		<property name="lastUpdatedUserId" type="string" length="8" column="LAST_UPTD_USER_ID" />
+
+		<property name="hole_number" column="HOLE_NBR" type="integer" />
+		
+		<property name="strokes" column="STROKES" type="integer" />
+		
+		<many-to-one name="weeklyScore" column="WEEKLY_SCORE_ID" class="WeeklyScore" />
+	</class>
+</hibernate-mapping>
