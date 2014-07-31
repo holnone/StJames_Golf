@@ -33,6 +33,7 @@ import com.stj.model.WeeklyScore;
 import com.stj.services.LeagueService;
 import com.stj.util.Constants;
 import com.stj.util.HoleUtils;
+import com.stj.web.ui.HomePage;
 import com.stj.web.ui.admin.base.AdminBasePage;
 import com.stj.web.wicket.form.input.LabelList;
 
@@ -667,7 +668,11 @@ public class ScoresPage extends AdminBasePage {
 
 			@Override
 			public void onClick() {
-				setResponsePage(new EditScoresPage(selectedWeek, selectedTeamMatch, matchPropertyName));
+				PageParameters parameters = new PageParameters();
+				parameters.add("selectedWeek", selectedWeek.getId());
+				parameters.add("selectedTeamMatch", selectedTeamMatch.getId());
+				parameters.add("matchPropertyName", matchPropertyName);
+				setResponsePage(EditScoresPage.class, parameters);
 			}
 		};
 		return link;

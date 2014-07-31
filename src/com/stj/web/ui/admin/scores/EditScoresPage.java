@@ -18,6 +18,7 @@ import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.IChoiceRenderer;
 import org.apache.wicket.model.PropertyModel;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.springframework.util.ReflectionUtils;
 
@@ -81,7 +82,40 @@ public class EditScoresPage extends AdminBasePage {
 
 	WebMarkupContainer matchContainer;
 
+	public EditScoresPage(PageParameters params) {
+		try {
+			Integer weekId = Integer.parseInt(params.get("selectedWeek").toString());
+			Week weekParam = leagueService.getWeek(weekId);
+			Integer matchId = Integer.parseInt(params.get("selectedTeamMatch").toString());
+			TeamMatch matchParam = null;
+			if (weekParam.getFrontNineTeeTime1().getId().equals(matchId)) {
+				matchParam = weekParam.getFrontNineTeeTime1();
+			} else if (weekParam.getFrontNineTeeTime2().getId().equals(matchId)) {
+				matchParam = weekParam.getFrontNineTeeTime2();
+			} else if (weekParam.getFrontNineTeeTime3().getId().equals(matchId)) {
+				matchParam = weekParam.getFrontNineTeeTime3();
+			} else if (weekParam.getBackNineTeeTime1().getId().equals(matchId)) {
+				matchParam = weekParam.getBackNineTeeTime1();
+			} else if (weekParam.getBackNineTeeTime2().getId().equals(matchId)) {
+				matchParam = weekParam.getBackNineTeeTime2();
+			} else if (weekParam.getBackNineTeeTime3().getId().equals(matchId)) {
+				matchParam = weekParam.getBackNineTeeTime3();
+			}
+			String matchPropertyNameParam = params.get("matchPropertyName").toString();
+			initPage(weekParam, matchParam, matchPropertyNameParam);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public EditScoresPage(Week week, TeamMatch match, String matchPropertyName) {
+		initPage(week, match, matchPropertyName);
+	}
+
+	void initPage(Week week, TeamMatch match, String matchPropertyName) {
+		if (match.getCourse() == null) {
+			match.setCourse(leagueService.getTheKnolls2013());
+		}
 		this.selectedTeamMatch = match;
 		this.selectedWeek = week;
 		this.matchPropertyName = matchPropertyName;
