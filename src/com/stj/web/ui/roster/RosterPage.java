@@ -9,13 +9,12 @@ import java.util.List;
 
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.Component;
-import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.core.util.resource.PackageResourceStream;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.MarkupStream;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.link.PopupSettings;
 import org.apache.wicket.markup.html.link.ResourceLink;
 import org.apache.wicket.markup.repeater.RepeatingView;
@@ -139,25 +138,19 @@ public class RosterPage extends BasePage {
 	}
 
 	private Component getTeamLink(String componentId, final Team team) {
-		AjaxLink<String> ajaxLink = new AjaxLink<String>(componentId) {
+		PageParameters params = new PageParameters();
+		params.add("teamId", team.getId());
+		BookmarkablePageLink<String> link = new BookmarkablePageLink<String>(componentId, TeamPage.class, params) {
 
 			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick(AjaxRequestTarget target) {
-				showFeedback(target);
-				PageParameters params = new PageParameters();
-				params.add("teamId", team.getId());
-				setResponsePage(TeamPage.class, params);
-			}
-
+			
 			@Override
 			public void onComponentTagBody(MarkupStream markupStream, ComponentTag openTag) {
 				replaceComponentTagBody(markupStream, openTag, team.toString());
 			}
 
 		};
-		return ajaxLink;
+		return link;
 	}
 
 	private ResourceLink<Object> getTeamScheduleLink(String componentId, final Team team) {
@@ -206,16 +199,13 @@ public class RosterPage extends BasePage {
 	}
 
 	private Component getPlayerDetailLink(String componentId, final Player player) {
-		AjaxLink<String> ajaxLink = new AjaxLink<String>(componentId) {
+		PageParameters params = new PageParameters();
+		if (player.getId() != null) {
+			params.add("playerId", player.getId());
+		}
+		BookmarkablePageLink<String> link = new BookmarkablePageLink<String>(componentId, PlayerDetailPage.class, params) {
 
 			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick(AjaxRequestTarget target) {
-				PageParameters params = new PageParameters();
-				params.add("playerId", player.getId());
-				setResponsePage(PlayerDetailPage.class, params);
-			}
 
 			@Override
 			public void onComponentTagBody(MarkupStream markupStream, ComponentTag openTag) {
@@ -223,7 +213,7 @@ public class RosterPage extends BasePage {
 			}
 
 		};
-		return ajaxLink;
+		return link;
 	}
 
 	public void setLeagueService(LeagueService leagueService) {

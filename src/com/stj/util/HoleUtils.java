@@ -61,10 +61,10 @@ public class HoleUtils {
 		knolls2013Holes.put(3, new Hole(3, 335, 4, 13));
 		knolls2013Holes.put(4, new Hole(4, 368, 4, 3));
 		knolls2013Holes.put(5, new Hole(5, 130, 3, 17));
-		knolls2013Holes.put(6, new Hole(8, 157, 3, 5));
-		knolls2013Holes.put(7, new Hole(9, 460, 5, 11));
-		knolls2013Holes.put(8, new Hole(7, 377, 4, 1));
-		knolls2013Holes.put(9, new Hole(6, 498, 5, 15));
+		knolls2013Holes.put(6, new Hole(6, 157, 3, 5));
+		knolls2013Holes.put(7, new Hole(7, 460, 5, 11));
+		knolls2013Holes.put(8, new Hole(8, 377, 4, 1));
+		knolls2013Holes.put(9, new Hole(9, 498, 5, 15));
 
 		knolls2013Holes.put(10, new Hole(10, 170, 3, 2));
 		knolls2013Holes.put(11, new Hole(11, 500, 5, 10));

@@ -9,6 +9,7 @@ import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior;
+import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.DropDownChoice;
@@ -33,7 +34,6 @@ import com.stj.model.WeeklyScore;
 import com.stj.services.LeagueService;
 import com.stj.util.Constants;
 import com.stj.util.HoleUtils;
-import com.stj.web.ui.HomePage;
 import com.stj.web.ui.admin.base.AdminBasePage;
 import com.stj.web.wicket.form.input.LabelList;
 
@@ -663,11 +663,11 @@ public class ScoresPage extends AdminBasePage {
 	}
 
 	private Component getEditLink(String componentId, final String matchPropertyName) {
-		Link<String> link = new Link<String>(componentId) {
+		AjaxLink<String> link = new AjaxLink<String>(componentId) {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public void onClick() {
+			public void onClick(AjaxRequestTarget target) {
 				PageParameters parameters = new PageParameters();
 				parameters.add("selectedWeek", selectedWeek.getId());
 				parameters.add("selectedTeamMatch", selectedTeamMatch.getId());
