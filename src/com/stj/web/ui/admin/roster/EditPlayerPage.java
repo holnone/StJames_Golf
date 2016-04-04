@@ -67,8 +67,8 @@ public class EditPlayerPage extends AdminBasePage {
 
 	private void renderContent() {
 		Form<Object> form = new Form<Object>("form");
-		form.add(new TextField<String>("firstNameText", new PropertyModel<String>(this.player, "name.firstName")));
-		form.add(new TextField<String>("lastNameText", new PropertyModel<String>(this.player, "name.lastName")));
+		form.add(new TextField<String>("firstNameText", new PropertyModel<String>(this.player, "playerName.firstName")));
+		form.add(new TextField<String>("lastNameText", new PropertyModel<String>(this.player, "playerName.lastName")));
 		for (int i = 1; i <= 5; i++) {
 			form.add(new TextField<Integer>("preRound" + i + "Score", new PropertyModel<Integer>(this, "preRound" + i + "Score")));
 			form.add(new DropDownChoice<Course>("preRound" + i + "Course", new PropertyModel<Course>(this, "preRound" + i + "Course"),
@@ -88,7 +88,7 @@ public class EditPlayerPage extends AdminBasePage {
 			@Override
 			protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
 				showFeedback(target);
-				if (player.getName().getFirstName() == null || player.getName().getLastName() == null) {
+				if (player.getPlayerName().getFirstName() == null || player.getPlayerName().getLastName() == null) {
 					error("Please enter both a First and Last Name.");
 				} else {
 					populatePreRounds();

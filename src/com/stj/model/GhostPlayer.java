@@ -5,7 +5,7 @@ public class GhostPlayer extends Player {
 
 	public GhostPlayer() {
 		setId(999999);
-		setName(new Name("Ghost", "Player"));
+		setPlayerName(new Name("Ghost", "Player"));
 	}
 	
 }

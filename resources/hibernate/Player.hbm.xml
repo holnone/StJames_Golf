@@ -16,12 +16,14 @@
 
 		<property name="active" type="yes_no" length="1" column="ACTIVE_FLAG" />
 		
-		<component name="name" >
+		<component name="playerName" >
 			<property name="firstName" column="FIRST_NAME" type="string" />
 			<property name="lastName" column="LAST_NAME" type="string" />
 		</component>
 		
 		<property name="skinsStartDate" type="date" column="SKINS_START_DATE" />
+		
+		<property name="seniorStartDate" type="date" column="SENIOR_START_DATE" />
 		
 		<many-to-one name="team" column="TEAM_ID" class="Team" lazy="false"/>
 

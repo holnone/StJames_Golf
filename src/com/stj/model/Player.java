@@ -16,22 +16,23 @@ public class Player extends BaseEntity implements Comparable<Player> {
 
 	private static final long serialVersionUID = 1L;
 
-	private Name name;
+	private Name playerName;
 	private Team team;
 	private Set<WeeklyScore> scores = new HashSet<WeeklyScore>();
 	private Set<PreRound> preRounds = new HashSet<PreRound>();
 	private Integer lowScore;
 	private boolean active;
 	private Date skinsStartDate;
+	private Date seniorStartDate;
 
 	private Double individualPoints = new Double(0.0);
 
-	public Name getName() {
-		return name;
+	public Name getPlayerName() {
+		return playerName;
 	}
 
-	public void setName(Name name) {
-		this.name = name;
+	public void setPlayerName(Name playerName) {
+		this.playerName = playerName;
 	}
 
 	public Team getTeam() {
@@ -57,15 +58,16 @@ public class Player extends BaseEntity implements Comparable<Player> {
 		Collections.sort(list);
 		Collections.reverse(list);
 
-		if (currentWeek != null) {
+		if (currentWeek != null || getSeniorStartDate() != null) {
 			for (Iterator<PlayerScore> iter = list.iterator(); iter.hasNext();) {
 				PlayerScore score = iter.next();
-				if (!score.getScoreDate().before(currentWeek)) {
+				if ((currentWeek != null && !score.getScoreDate().before(currentWeek)) ||
+						(getSeniorStartDate() != null && !score.getScoreDate().after(getSeniorStartDate()))) {
 					iter.remove();
 				}
 			}
 		}
-
+		
 		List<PlayerScore> last5Rounds = new ArrayList<PlayerScore>();
 		if (list.size() > 4) {
 			last5Rounds = new ArrayList<PlayerScore>(list.subList(0, 5));
@@ -119,12 +121,12 @@ public class Player extends BaseEntity implements Comparable<Player> {
 
 	@Override
 	public String toString() {
-		return (getSkinsStartDate() != null ? "*" : "") + (getName() != null ? getName().toString() : "");
+		return (getSkinsStartDate() != null ? "*" : "") + (getPlayerName() != null ? getPlayerName().toString() : "") + (getSeniorStartDate() != null ? " (S)" : "");
 	}
 
 	public int compareTo(Player other) {
-		return new CompareToBuilder().append(this.getName().getLastName(), other.getName().getLastName()).append(this.getName().getFirstName(),
-				other.getName().getFirstName()).toComparison();
+		return new CompareToBuilder().append(this.getPlayerName().getLastName(), other.getPlayerName().getLastName()).append(this.getPlayerName().getFirstName(),
+				other.getPlayerName().getFirstName()).toComparison();
 	}
 
 	public Set<PreRound> getPreRounds() {
@@ -191,6 +193,14 @@ public class Player extends BaseEntity implements Comparable<Player> {
 
 	public void setSkinsStartDate(Date skinsStartDate) {
 		this.skinsStartDate = skinsStartDate;
+	}
+
+	public Date getSeniorStartDate() {
+		return seniorStartDate;
+	}
+
+	public void setSeniorStartDate(Date seniorStartDate) {
+		this.seniorStartDate = seniorStartDate;
 	}
 
 }

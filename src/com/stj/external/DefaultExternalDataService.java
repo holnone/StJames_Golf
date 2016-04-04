@@ -104,8 +104,8 @@ public class DefaultExternalDataService {
 
 	private ExternalPlayer buildPlayer(Player player) {
 		ExternalPlayer newPlayer = new ExternalPlayer();
-		newPlayer.setFirstName(player.getName().getFirstName());
-		newPlayer.setLastName(player.getName().getLastName());
+		newPlayer.setFirstName(player.getPlayerName().getFirstName());
+		newPlayer.setLastName(player.getPlayerName().getLastName());
 		newPlayer.setTeam(player.getTeam() != null ? buildTeam(player.getTeam()) : null);
 		newPlayer.setScores(convertScores(player.getLast5Rounds(new Date())));
 		newPlayer.setCurrentHandicap(newPlayer.getCurrentHandicap(new Date()));
