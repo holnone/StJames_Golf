@@ -60,7 +60,7 @@ public class StJamesApplication extends AuthenticatedWebApplication implements A
 			mount(new MountedMapperWithoutPageComponentInfo("/admin/settings", SettingsPage.class));
 			mount(new MountedMapperWithoutPageComponentInfo("/team", TeamPage.class));
 			mount(new MountedMapperWithoutPageComponentInfo("/couples", CouplesPage.class));
-			//mount(new MountedMapperWithoutPageComponentInfo("/skins", SkinsPage.class));
+			mount(new MountedMapperWithoutPageComponentInfo("/skins", SkinsPage.class));
 			mount(new MountedMapperWithoutPageComponentInfo("/messageBoard", MessageBoardPage.class));
 			mount(new MountedMapperWithoutPageComponentInfo("/editScoresPage", EditScoresPage.class));
 			mount(new MountedMapperWithoutPageComponentInfo("/playerDetail", PlayerDetailPage.class));

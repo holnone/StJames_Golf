@@ -103,7 +103,8 @@ public class TeamPage extends BasePage {
 		List<Player> players = new ArrayList<Player>(schedule.getPlayers());
 		Collections.sort(players);
 		for (Iterator<Player> iter = players.iterator(); iter.hasNext();) {
-			sb.append(iter.next().getPlayerName().getFirstName());
+			Player player = iter.next();
+			sb.append(player.getPlayerName().getFirstName() + " " + player.getPlayerName().getLastName().substring(0, 1));
 			if (iter.hasNext()) {
 				sb.append(", ");
 			}
@@ -118,7 +119,8 @@ public class TeamPage extends BasePage {
 		players.removeAll(schedule.getPlayers());
 		Collections.sort(players);
 		for (Iterator<Player> iter = players.iterator(); iter.hasNext();) {
-			sb.append(iter.next().getPlayerName().getFirstName());
+			Player player = iter.next();
+			sb.append(player.getPlayerName().getFirstName() + " " + player.getPlayerName().getLastName().substring(0, 1));
 			if (iter.hasNext()) {
 				sb.append(", ");
 			}
