@@ -74,7 +74,7 @@ public class StJamesWebSession extends AuthenticatedWebSession {
 			authentication = SecurityContextHolder.getContext().getAuthentication();
 		}
 		if (authentication == null) {
-			System.out.println("*********AUTHENTICATION IS NULL: " + new SimpleDateFormat("MM/dd/yyyy HH:MM:SS").format(Calendar.getInstance().getTime()));
+			//System.out.println("*********AUTHENTICATION IS NULL: " + new SimpleDateFormat("MM/dd/yyyy HH:MM:SS").format(Calendar.getInstance().getTime()));
 			roles.add("ROLE_ADMIN");
 		} else {
 			for (GrantedAuthority authority : authentication.getAuthorities()) {
