@@ -34,7 +34,7 @@ public class BasePage extends WebPage {
 		// Add menu links
 		add(new BookmarkablePageLink<Void>("homeLink", HomePage.class));
 		add(new BookmarkablePageLink<Void>("messageBoardLink", MessageBoardPage.class));
-		add(new BookmarkablePageLink<Void>("skinsLink", SkinsPage.class));
+		//add(new BookmarkablePageLink<Void>("skinsLink", SkinsPage.class));
 		add(new BookmarkablePageLink<Void>("rosterLink", RosterPage.class));
 		add(new BookmarkablePageLink<Void>("scoresLink", ScoresPage.class));
 		add(new BookmarkablePageLink<Void>("scorecardLink", ScorecardBasePage.class));

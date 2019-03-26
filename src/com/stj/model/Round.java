@@ -195,10 +195,9 @@ public class Round extends BaseEntity implements Comparable<Round> {
 
 					teams.put(team1Number, week.getFrontNineTeeTime1().getTeam1().getTeam());
 					teams.put(team2Number, week.getFrontNineTeeTime1().getTeam2().getTeam());
-
-					team1Points += teamPoints.get(team1Number) != null ? teamPoints.get(team1Number) : 0;
-					team2Points += teamPoints.get(team2Number) != null ? teamPoints.get(team2Number) : 0;
 				}
+				team1Points += teamPoints.get(team1Number) != null ? teamPoints.get(team1Number) : 0;
+				team2Points += teamPoints.get(team2Number) != null ? teamPoints.get(team2Number) : 0;
 				teamPoints.put(team1Number, team1Points);
 				teamPoints.put(team2Number, team2Points);
 			}
@@ -253,10 +252,9 @@ public class Round extends BaseEntity implements Comparable<Round> {
 
 					teams.put(team1Number, week.getFrontNineTeeTime2().getTeam1().getTeam());
 					teams.put(team2Number, week.getFrontNineTeeTime2().getTeam2().getTeam());
-
-					team1Points += teamPoints.get(team1Number) != null ? teamPoints.get(team1Number) : 0;
-					team2Points += teamPoints.get(team2Number) != null ? teamPoints.get(team2Number) : 0;
 				}
+				team1Points += teamPoints.get(team1Number) != null ? teamPoints.get(team1Number) : 0;
+				team2Points += teamPoints.get(team2Number) != null ? teamPoints.get(team2Number) : 0;
 				teamPoints.put(team1Number, team1Points);
 				teamPoints.put(team2Number, team2Points);
 			}
@@ -311,10 +309,9 @@ public class Round extends BaseEntity implements Comparable<Round> {
 
 					teams.put(team1Number, week.getFrontNineTeeTime3().getTeam1().getTeam());
 					teams.put(team2Number, week.getFrontNineTeeTime3().getTeam2().getTeam());
-
-					team1Points += teamPoints.get(team1Number) != null ? teamPoints.get(team1Number) : 0;
-					team2Points += teamPoints.get(team2Number) != null ? teamPoints.get(team2Number) : 0;
 				}
+				team1Points += teamPoints.get(team1Number) != null ? teamPoints.get(team1Number) : 0;
+				team2Points += teamPoints.get(team2Number) != null ? teamPoints.get(team2Number) : 0;
 				teamPoints.put(team1Number, team1Points);
 				teamPoints.put(team2Number, team2Points);
 			}
@@ -369,10 +366,9 @@ public class Round extends BaseEntity implements Comparable<Round> {
 
 					teams.put(team1Number, week.getBackNineTeeTime1().getTeam1().getTeam());
 					teams.put(team2Number, week.getBackNineTeeTime1().getTeam2().getTeam());
-
-					team1Points += teamPoints.get(team1Number) != null ? teamPoints.get(team1Number) : 0;
-					team2Points += teamPoints.get(team2Number) != null ? teamPoints.get(team2Number) : 0;
 				}
+				team1Points += teamPoints.get(team1Number) != null ? teamPoints.get(team1Number) : 0;
+				team2Points += teamPoints.get(team2Number) != null ? teamPoints.get(team2Number) : 0;
 				teamPoints.put(team1Number, team1Points);
 				teamPoints.put(team2Number, team2Points);
 			}
@@ -427,10 +423,9 @@ public class Round extends BaseEntity implements Comparable<Round> {
 
 					teams.put(team1Number, week.getBackNineTeeTime2().getTeam1().getTeam());
 					teams.put(team2Number, week.getBackNineTeeTime2().getTeam2().getTeam());
-
-					team1Points += teamPoints.get(team1Number) != null ? teamPoints.get(team1Number) : 0;
-					team2Points += teamPoints.get(team2Number) != null ? teamPoints.get(team2Number) : 0;
 				}
+				team1Points += teamPoints.get(team1Number) != null ? teamPoints.get(team1Number) : 0;
+				team2Points += teamPoints.get(team2Number) != null ? teamPoints.get(team2Number) : 0;
 				teamPoints.put(team1Number, team1Points);
 				teamPoints.put(team2Number, team2Points);
 			}
@@ -485,10 +480,9 @@ public class Round extends BaseEntity implements Comparable<Round> {
 
 					teams.put(team1Number, week.getBackNineTeeTime3().getTeam1().getTeam());
 					teams.put(team2Number, week.getBackNineTeeTime3().getTeam2().getTeam());
-
-					team1Points += teamPoints.get(team1Number) != null ? teamPoints.get(team1Number) : 0;
-					team2Points += teamPoints.get(team2Number) != null ? teamPoints.get(team2Number) : 0;
 				}
+				team1Points += teamPoints.get(team1Number) != null ? teamPoints.get(team1Number) : 0;
+				team2Points += teamPoints.get(team2Number) != null ? teamPoints.get(team2Number) : 0;
 				teamPoints.put(team1Number, team1Points);
 				teamPoints.put(team2Number, team2Points);
 			}
