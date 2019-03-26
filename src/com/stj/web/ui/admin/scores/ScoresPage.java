@@ -28,7 +28,7 @@ import com.stj.model.Season;
 import com.stj.model.Side;
 import com.stj.model.Team;
 import com.stj.model.TeamMatch;
-import com.stj.model.TheKnolls2013;
+import com.stj.model.TheKnolls2019;
 import com.stj.model.Week;
 import com.stj.model.WeeklyScore;
 import com.stj.services.LeagueService;
@@ -54,7 +54,7 @@ public class ScoresPage extends AdminBasePage {
 
 	private Course matchCourse;
 
-	private TheKnolls2013 theKnolls2013;
+	private TheKnolls2019 theKnolls2019;
 
 	private Team team1;
 	private Team team2;
@@ -178,8 +178,8 @@ public class ScoresPage extends AdminBasePage {
 			}
 		}
 
-		theKnolls2013 = leagueService.getTheKnolls2013();
-		courseChoices.add(theKnolls2013);
+		theKnolls2019 = leagueService.getTheKnolls2019();
+		courseChoices.add(theKnolls2019);
 
 		renderContent();
 		resetMatchups();
@@ -204,7 +204,7 @@ public class ScoresPage extends AdminBasePage {
 	private void resetMatches() {
 		matchCourse = selectedTeamMatch == null ? null : selectedTeamMatch.getCourse();
 		if (matchCourse == null && selectedTeamMatch != null) {
-			matchCourse = theKnolls2013;
+			matchCourse = theKnolls2019;
 			selectedTeamMatch.setCourse(matchCourse);
 		}
 		team1 = selectedTeamMatch != null ? selectedTeamMatch.getTeam1().getTeam() : null;

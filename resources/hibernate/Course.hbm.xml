@@ -27,6 +27,8 @@
 		
 		<subclass name="TheKnolls2013" discriminator-value="K2" />
 
+		<subclass name="TheKnolls2019" discriminator-value="K3" />
+
 		<subclass name="Ironwood" discriminator-value="IW" />
 
 	</class>

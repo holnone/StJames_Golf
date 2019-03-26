@@ -11,6 +11,7 @@ import com.stj.model.Team;
 import com.stj.model.TeamMatch;
 import com.stj.model.TheKnolls;
 import com.stj.model.TheKnolls2013;
+import com.stj.model.TheKnolls2019;
 import com.stj.model.Week;
 import com.stj.model.WeeklyScore;
 
@@ -43,6 +44,8 @@ public interface LeagueService {
 	public TheKnolls getTheKnolls();
 
 	public TheKnolls2013 getTheKnolls2013();
+
+	public TheKnolls2019 getTheKnolls2019();
 
 	public Ironwood getIronwood();
 

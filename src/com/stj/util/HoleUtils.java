@@ -12,6 +12,7 @@ import com.stj.model.Ironwood;
 import com.stj.model.Side;
 import com.stj.model.TheKnolls;
 import com.stj.model.TheKnolls2013;
+import com.stj.model.TheKnolls2019;
 
 public class HoleUtils {
 
@@ -25,6 +26,9 @@ public class HoleUtils {
 
 	public static List<String> THE_KNOLLS_2013_FRONT_HANDICAPS = Arrays.asList(new String[] { "7", "9", "13", "3", "17", "5", "11", "1", "15" });
 	public static List<String> THE_KNOLLS_2013_BACK_HANDICAPS = Arrays.asList(new String[] { "2", "10", "4", "12", "14", "18", "8", "6", "16" });
+
+	public static List<String> THE_KNOLLS_2019_FRONT_HANDICAPS = Arrays.asList(new String[] { "7", "5", "13", "3", "17", "15", "1", "9", "11" });
+	public static List<String> THE_KNOLLS_2019_BACK_HANDICAPS = Arrays.asList(new String[] { "2", "10", "4", "12", "14", "18", "8", "6", "16" });
 
 	public static List<String> IRONWOOD_FRONT_HANDICAPS = Arrays.asList(new String[] { "8", "18", "12", "2", "16", "6", "14", "4", "10" });
 	public static List<String> IRONWOOD_BACK_HANDICAPS = Arrays.asList(new String[] { "9", "3", "15", "17", "13", "7", "1", "11", "5" });
@@ -75,7 +79,30 @@ public class HoleUtils {
 		knolls2013Holes.put(16, new Hole(16, 158, 3, 8));
 		knolls2013Holes.put(17, new Hole(17, 339, 4, 6));
 		knolls2013Holes.put(18, new Hole(18, 330, 4, 16));
-		
+
+		TheKnolls2019 knolls = new TheKnolls2019();
+		Map<Integer, Hole> knollsHoles2019 = new HashMap<Integer, Hole>();
+		holes.put(knolls2019, knollsHoles2019);
+		knollsHoles2019.put(1, new Hole(1, 366, 4, 7));
+		knollsHoles2019.put(2, new Hole(2, 171, 3, 5));
+		knollsHoles2019.put(3, new Hole(3, 335, 4, 13));
+		knollsHoles2019.put(4, new Hole(4, 368, 4, 3));
+		knollsHoles2019.put(5, new Hole(5, 130, 3, 17));
+		knollsHoles2019.put(6, new Hole(6, 498, 5, 15));
+		knollsHoles2019.put(7, new Hole(7, 377, 4, 1));
+		knollsHoles2019.put(8, new Hole(8, 157, 3, 9));
+		knollsHoles2019.put(9, new Hole(9, 460, 5, 11));
+
+		knollsHoles2019.put(10, new Hole(10, 170, 3, 2));
+		knollsHoles2019.put(11, new Hole(11, 500, 5, 10));
+		knollsHoles2019.put(12, new Hole(12, 354, 4, 4));
+		knollsHoles2019.put(13, new Hole(13, 447, 5, 12));
+		knollsHoles2019.put(14, new Hole(14, 363, 4, 14));
+		knollsHoles2019.put(15, new Hole(15, 290, 4, 18));
+		knollsHoles2019.put(16, new Hole(16, 158, 3, 8));
+		knollsHoles2019.put(17, new Hole(17, 339, 4, 6));
+		knollsHoles2019.put(18, new Hole(18, 330, 4, 16));
+
 		Ironwood ironwood = new Ironwood();
 		Map<Integer, Hole> ironwoodHoles = new HashMap<Integer, Hole>();
 		holes.put(ironwood, ironwoodHoles);
@@ -108,6 +135,8 @@ public class HoleUtils {
 				return "FT".equals(side.getSideType()) ? IRONWOOD_FRONT_HANDICAPS : IRONWOOD_BACK_HANDICAPS;
 			} else if (side.getCourse() instanceof TheKnolls2013) {
 				return "FT".equals(side.getSideType()) ? THE_KNOLLS_2013_FRONT_HANDICAPS : THE_KNOLLS_2013_BACK_HANDICAPS;
+			} else if (side.getCourse() instanceof TheKnolls2019) {
+				return "FT".equals(side.getSideType()) ? THE_KNOLLS_2019_FRONT_HANDICAPS : THE_KNOLLS_2019_BACK_HANDICAPS;
 			}
 		}
 		//Default to The Knolls Front handicaps
