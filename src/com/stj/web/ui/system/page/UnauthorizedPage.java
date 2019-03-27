@@ -14,25 +14,16 @@ public class UnauthorizedPage extends BasePage {
 		warn(errorMsg);
 	}
 
-	/**
-	 * @see wicket.markup.html.WebPage#configureResponse()
-	 */
 	@Override
 	protected void configureResponse(WebResponse response) {
 		((HttpServletResponse) getResponse().getContainerResponse()).setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 	}
 
-	/**
-	 * @see wicket.Component#isVersioned()
-	 */
 	@Override
 	public boolean isVersioned() {
 		return false;
 	}
 
-	/**
-	 * @see wicket.Page#isErrorPage()
-	 */
 	@Override
 	public boolean isErrorPage() {
 		return true;
