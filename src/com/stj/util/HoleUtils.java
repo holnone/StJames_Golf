@@ -139,8 +139,8 @@ public class HoleUtils {
 				return "FT".equals(side.getSideType()) ? THE_KNOLLS_2019_FRONT_HANDICAPS : THE_KNOLLS_2019_BACK_HANDICAPS;
 			}
 		}
-		//Default to The Knolls Front handicaps
-		return THE_KNOLLS_2013_FRONT_HANDICAPS;
+		//Default to The Knolls Front handicaps 2019
+		return THE_KNOLLS_2019_FRONT_HANDICAPS;
 	}
 
 	public static List<Hole> getFrontNineHoles(Course course) {

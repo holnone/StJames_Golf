@@ -50,10 +50,10 @@ public class ScoresPage extends BasePage {
 	private Team team1;
 	private Team team2;
 
-	private List<String> matchAHoleNumbers = new ArrayList<String>(HoleUtils.THE_KNOLLS_2019_FRONT_HANDICAPS);
-	private List<String> matchBHoleNumbers = new ArrayList<String>(HoleUtils.THE_KNOLLS_2019_FRONT_HANDICAPS);
-	private List<String> matchCHoleNumbers = new ArrayList<String>(HoleUtils.THE_KNOLLS_2019_FRONT_HANDICAPS);
-	private List<String> matchDHoleNumbers = new ArrayList<String>(HoleUtils.THE_KNOLLS_2019_FRONT_HANDICAPS);
+	private List<String> matchAHoleNumbers = new ArrayList<String>(HoleUtils.FRONT_HOLE_NUMBERS);
+	private List<String> matchBHoleNumbers = new ArrayList<String>(HoleUtils.FRONT_HOLE_NUMBERS);
+	private List<String> matchCHoleNumbers = new ArrayList<String>(HoleUtils.FRONT_HOLE_NUMBERS);
+	private List<String> matchDHoleNumbers = new ArrayList<String>(HoleUtils.FRONT_HOLE_NUMBERS);
 
 	private List<String> matchAHoleHandicaps = new ArrayList<String>(HoleUtils.getHandicaps(null));
 	private List<String> matchBHoleHandicaps = new ArrayList<String>(HoleUtils.getHandicaps(null));
