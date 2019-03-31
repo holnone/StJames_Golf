@@ -80,7 +80,7 @@ public class HoleUtils {
 		knolls2013Holes.put(17, new Hole(17, 339, 4, 6));
 		knolls2013Holes.put(18, new Hole(18, 330, 4, 16));
 
-		TheKnolls2019 knolls = new TheKnolls2019();
+		TheKnolls2019 knolls2019 = new TheKnolls2019();
 		Map<Integer, Hole> knollsHoles2019 = new HashMap<Integer, Hole>();
 		holes.put(knolls2019, knollsHoles2019);
 		knollsHoles2019.put(1, new Hole(1, 366, 4, 7));
