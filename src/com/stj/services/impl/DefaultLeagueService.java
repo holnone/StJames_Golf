@@ -12,6 +12,7 @@ import com.stj.model.Team;
 import com.stj.model.TeamMatch;
 import com.stj.model.TheKnolls;
 import com.stj.model.TheKnolls2013;
+import com.stj.model.TheKnolls2019;
 import com.stj.model.Week;
 import com.stj.model.WeeklyScore;
 import com.stj.repo.CourseRepository;
@@ -98,6 +99,10 @@ public class DefaultLeagueService implements LeagueService {
 
 	public TheKnolls2013 getTheKnolls2013() {
 		return courseRepository.getTheKnolls2013();
+	}
+
+	public TheKnolls2019 getTheKnolls2019() {
+		return courseRepository.getTheKnolls2019();
 	}
 
 	public Ironwood getIronwood() {

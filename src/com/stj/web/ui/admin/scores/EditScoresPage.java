@@ -114,7 +114,7 @@ public class EditScoresPage extends AdminBasePage {
 
 	void initPage(Week week, TeamMatch match, String matchPropertyName) {
 		if (match.getCourse() == null) {
-			match.setCourse(leagueService.getTheKnolls2013());
+			match.setCourse(leagueService.getTheKnolls2019());
 		}
 		this.selectedTeamMatch = match;
 		this.selectedWeek = week;

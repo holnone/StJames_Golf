@@ -101,11 +101,11 @@ public class RosterPage extends BasePage {
 	}
 
 	private void addTeamLabels(WebMarkupContainer item, Team team1, Team team2) {
-		if (team1.getTeamNumber() == 3) {
-			item.add(getTeamScheduleLink("team1Link", team1));
-		} else {
-			item.add(new Label("team1Link", team1.toString()));
-		}
+		/*
+		 * if (team1.getTeamNumber() == 3) { item.add(getTeamScheduleLink("team1Link",
+		 * team1)); } else { item.add(new Label("team1Link", team1.toString())); }
+		 */
+		item.add(new Label("team1Link", team1.toString()));
 		if (team2 != null) {
 			if (team2.getTeamNumber() == 6) {
 				item.add(getTeamLink("team2Link", team2));
