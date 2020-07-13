@@ -9,7 +9,7 @@
 	<property name="build.dir" value="build" />
 	<property name="deploy.dir" value="deploy" />
 
-	<property name="classes.dir" value="${build.dir}/classes" />
+	<property name="classes.dir" value="${build.dir}/production/stjames" />
 	<property name="webapp.dir" value="WebContent/WEB-INF" />
 
 	<target name="deploy">
