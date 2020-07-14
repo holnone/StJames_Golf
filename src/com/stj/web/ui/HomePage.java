@@ -90,19 +90,19 @@ public class HomePage extends BasePage {
 		add(buildWeekDropDown(weekChoices));
 		boolean setCurrent = true;
 
-		add(new Label("frontNineTeeTime1Group1", Constants.TEE_TIME_1_GROUP_1));
-		add(new Label("frontNineTeeTime2Group1", Constants.TEE_TIME_2_GROUP_1));
-		add(new Label("frontNineTeeTime3Group1", Constants.TEE_TIME_3_GROUP_1));
-		add(new Label("backNineTeeTime1Group1", Constants.TEE_TIME_1_GROUP_1));
-		add(new Label("backNineTeeTime2Group1", Constants.TEE_TIME_2_GROUP_1));
-		add(new Label("backNineTeeTime3Group1", Constants.TEE_TIME_3_GROUP_1));
+		add(new Label("teeTime1Group1", Constants.TEE_TIME_1_GROUP_1));
+		add(new Label("teeTime2Group1", Constants.TEE_TIME_2_GROUP_1));
+		add(new Label("teeTime3Group1", Constants.TEE_TIME_3_GROUP_1));
+		add(new Label("teeTime4Group1", Constants.TEE_TIME_4_GROUP_1));
+		add(new Label("teeTime5Group1", Constants.TEE_TIME_5_GROUP_1));
+		add(new Label("teeTime6Group1", Constants.TEE_TIME_6_GROUP_1));
 
-		add(new Label("frontNineTeeTime1Group2", Constants.TEE_TIME_1_GROUP_2));
-		add(new Label("frontNineTeeTime2Group2", Constants.TEE_TIME_2_GROUP_2));
-		add(new Label("frontNineTeeTime3Group2", Constants.TEE_TIME_3_GROUP_2));
-		add(new Label("backNineTeeTime1Group2", Constants.TEE_TIME_1_GROUP_2));
-		add(new Label("backNineTeeTime2Group2", Constants.TEE_TIME_2_GROUP_2));
-		add(new Label("backNineTeeTime3Group2", Constants.TEE_TIME_3_GROUP_2));
+		add(new Label("teeTime1Group2", Constants.TEE_TIME_1_GROUP_2));
+		add(new Label("teeTime2Group2", Constants.TEE_TIME_2_GROUP_2));
+		add(new Label("teeTime3Group2", Constants.TEE_TIME_3_GROUP_2));
+		add(new Label("teeTime4Group2", Constants.TEE_TIME_4_GROUP_2));
+		add(new Label("teeTime5Group2", Constants.TEE_TIME_5_GROUP_2));
+		add(new Label("teeTime6Group2", Constants.TEE_TIME_6_GROUP_2));
 
 		RepeatingView round1Repeater = new RepeatingView("round1");
 		add(round1Repeater);
@@ -127,25 +127,38 @@ public class HomePage extends BasePage {
 			round1Repeater.add(item);
 
 			item.add(new Label("weekDate", Constants.DATE_FORMAT.format(week.getDate())));
-			item.add(new Label("frontNineTeeTime1", week.getFrontNineTeeTime1() != null ? week.getFrontNineTeeTime1().toString() : null));
-			item.add(new Label("frontNineTeeTime2", week.getFrontNineTeeTime2() != null ? week.getFrontNineTeeTime2().toString() : null));
-			item.add(new Label("frontNineTeeTime3", week.getFrontNineTeeTime3() != null ? week.getFrontNineTeeTime3().toString() : null));
-			item.add(new Label("backNineTeeTime1", week.getBackNineTeeTime1() != null ? week.getBackNineTeeTime1().toString() : null));
-			item.add(new Label("backNineTeeTime2", week.getBackNineTeeTime2() != null ? week.getBackNineTeeTime2().toString() : null));
-			item.add(new Label("backNineTeeTime3", week.getBackNineTeeTime3() != null ? week.getBackNineTeeTime3().toString() : null));
-			
+			item.add(new Label("teeTime1", week.getFrontNineTeeTime1() != null ? week.getFrontNineTeeTime1().toString() : null));
+			item.add(new Label("teeTime2", week.getFrontNineTeeTime2() != null ? week.getFrontNineTeeTime2().toString() : null));
+			item.add(new Label("teeTime3", week.getFrontNineTeeTime3() != null ? week.getFrontNineTeeTime3().toString() : null));
+			item.add(new Label("teeTime4", week.getBackNineTeeTime1() != null ? week.getBackNineTeeTime1().toString() : null));
+			item.add(new Label("teeTime5", week.getBackNineTeeTime2() != null ? week.getBackNineTeeTime2().toString() : null));
+			item.add(new Label("teeTime6", week.getBackNineTeeTime3() != null ? week.getBackNineTeeTime3().toString() : null));
+
+			//Add League Outing label
+			if (matchDate.isEqual(new DateTime(2020, 7, 10, 0, 0, 0, 0))) {
+				item = new WebMarkupContainer(round1Repeater.newChildId());
+				item.setOutputMarkupId(true);
+				round1Repeater.add(item);
+				item.add(new Label("weekDate", Constants.DATE_FORMAT.format(new DateTime(2020, 7, 11, 0, 0, 0, 0).toDate())));
+				item.add(new Label("teeTime1", "WOOD"));
+				item.add(new Label("teeTime2", "LAND"));
+				item.add(new Label("teeTime3", "HILLS"));
+				item.add(new Label("teeTime4", "OUTING"));
+				item.add(new Label("teeTime5", "8:00 AM"));
+				item.add(new Label("teeTime6", "START"));
+			}
 			//Add Easter weekend label
 			if (matchDate.isEqual(new DateTime(2017, 4, 7, 0, 0, 0, 0))) {
 				item = new WebMarkupContainer(round1Repeater.newChildId());
 				item.setOutputMarkupId(true);
 				round1Repeater.add(item);
 				item.add(new Label("weekDate", Constants.DATE_FORMAT.format(new DateTime(2017, 4, 14, 0, 0, 0, 0).toDate())));
-				item.add(new Label("frontNineTeeTime1", "***"));
-				item.add(new Label("frontNineTeeTime2", "NO"));
-				item.add(new Label("frontNineTeeTime3", "PLAY"));
-				item.add(new Label("backNineTeeTime1", "EASTER"));
-				item.add(new Label("backNineTeeTime2", "WEEKEND"));
-				item.add(new Label("backNineTeeTime3", "***"));
+				item.add(new Label("teeTime1", "***"));
+				item.add(new Label("teeTime2", "NO"));
+				item.add(new Label("teeTime3", "PLAY"));
+				item.add(new Label("teeTime4", "EASTER"));
+				item.add(new Label("teeTime5", "WEEKEND"));
+				item.add(new Label("teeTime6", "***"));
 			}
 		}
 
@@ -165,26 +178,13 @@ public class HomePage extends BasePage {
 			round2Repeater.add(item);
 
 			item.add(new Label("weekDate", Constants.DATE_FORMAT.format(week.getDate())));
-			item.add(new Label("frontNineTeeTime1", week.getFrontNineTeeTime1() != null ? week.getFrontNineTeeTime1().toString() : null));
-			item.add(new Label("frontNineTeeTime2", week.getFrontNineTeeTime2() != null ? week.getFrontNineTeeTime2().toString() : null));
-			item.add(new Label("frontNineTeeTime3", week.getFrontNineTeeTime3() != null ? week.getFrontNineTeeTime3().toString() : null));
-			item.add(new Label("backNineTeeTime1", week.getBackNineTeeTime1() != null ? week.getBackNineTeeTime1().toString() : null));
-			item.add(new Label("backNineTeeTime2", week.getBackNineTeeTime2() != null ? week.getBackNineTeeTime2().toString() : null));
-			item.add(new Label("backNineTeeTime3", week.getBackNineTeeTime3() != null ? week.getBackNineTeeTime3().toString() : null));
+			item.add(new Label("teeTime1", week.getFrontNineTeeTime1() != null ? week.getFrontNineTeeTime1().toString() : null));
+			item.add(new Label("teeTime2", week.getFrontNineTeeTime2() != null ? week.getFrontNineTeeTime2().toString() : null));
+			item.add(new Label("teeTime3", week.getFrontNineTeeTime3() != null ? week.getFrontNineTeeTime3().toString() : null));
+			item.add(new Label("teeTime4", week.getBackNineTeeTime1() != null ? week.getBackNineTeeTime1().toString() : null));
+			item.add(new Label("teeTime5", week.getBackNineTeeTime2() != null ? week.getBackNineTeeTime2().toString() : null));
+			item.add(new Label("teeTime6", week.getBackNineTeeTime3() != null ? week.getBackNineTeeTime3().toString() : null));
 			
-			//Add League Outing label
-			if (matchDate.isEqual(new DateTime(2017, 7, 7, 0, 0, 0, 0))) {
-				item = new WebMarkupContainer(round1Repeater.newChildId());
-				item.setOutputMarkupId(true);
-				round2Repeater.add(item);
-				item.add(new Label("weekDate", Constants.DATE_FORMAT.format(new DateTime(2017, 7, 8, 0, 0, 0, 0).toDate())));
-				item.add(new Label("frontNineTeeTime1", "WOOD"));
-				item.add(new Label("frontNineTeeTime2", "LAND"));
-				item.add(new Label("frontNineTeeTime3", "HILLS"));
-				item.add(new Label("backNineTeeTime1", "OUTING"));
-				item.add(new Label("backNineTeeTime2", "8:00 AM"));
-				item.add(new Label("backNineTeeTime3", "START"));
-			}
 		}
 
 		add(new Label("playoffDate", Constants.DATE_FORMAT.format(matchDate.plusWeeks(1).toDate())));
