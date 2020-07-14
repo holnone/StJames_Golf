@@ -146,6 +146,7 @@ public class PdfExportUtils {
 
 			document.add(newLine);
 
+			//Normal Fridays
 			float[] colWidths = { 3f, 1f, 1f };
 			PdfPTable table = new PdfPTable(colWidths);
 			table.setHorizontalAlignment(PdfPTable.ALIGN_LEFT);
@@ -165,11 +166,36 @@ public class PdfExportUtils {
 			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getFrontNineTeeTime3().toString())));
 			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getBackNineTeeTime3().toString())));
 
+			//Sundays
+            /*float[] colWidths = { 3f, 1f };
+            PdfPTable table = new PdfPTable(colWidths);
+            table.setHorizontalAlignment(PdfPTable.ALIGN_LEFT);
+            table.addCell(new BorderlessPdfPCell(underlineSelectorLarge.process("TONIGHT'S SCHEDULE")));
+            table.addCell(new BorderlessPdfPCell(underlineSelectorLarge.process("FRONT")));
+
+            table.addCell(new BorderlessPdfPCell(selectorLarge.process(Constants.TEE_TIME_1_GROUP_1 + " & " + Constants.TEE_TIME_1_GROUP_2)));
+            table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getFrontNineTeeTime1().toString())));
+
+            table.addCell(new BorderlessPdfPCell(selectorLarge.process(Constants.TEE_TIME_4_GROUP_1 + " & " + Constants.TEE_TIME_4_GROUP_2)));
+            table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getBackNineTeeTime1().toString())));
+
+            table.addCell(new BorderlessPdfPCell(selectorLarge.process(Constants.TEE_TIME_2_GROUP_1 + " & " + Constants.TEE_TIME_2_GROUP_2)));
+            table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getFrontNineTeeTime2().toString())));
+
+            table.addCell(new BorderlessPdfPCell(selectorLarge.process(Constants.TEE_TIME_5_GROUP_1 + " & " + Constants.TEE_TIME_5_GROUP_2)));
+            table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getBackNineTeeTime2().toString())));
+
+            table.addCell(new BorderlessPdfPCell(selectorLarge.process(Constants.TEE_TIME_3_GROUP_1 + " & " + Constants.TEE_TIME_3_GROUP_2)));
+            table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getFrontNineTeeTime3().toString())));
+
+            table.addCell(new BorderlessPdfPCell(selectorLarge.process(Constants.TEE_TIME_6_GROUP_1 + " & " + Constants.TEE_TIME_6_GROUP_2)));
+            table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getBackNineTeeTime3().toString())));*/
+
 			document.add(table);
 
 			document.add(newLine);
 
-			if (nextWeek != null) {
+			/*if (nextWeek != null) {
 				colWidths = new float[] { 3f, 1f, 1f };
 				table = new PdfPTable(colWidths);
 				table.setHorizontalAlignment(PdfPTable.ALIGN_LEFT);
@@ -192,7 +218,7 @@ public class PdfExportUtils {
 				document.add(table);
 
 				document.add(newLine);
-			}
+			}*/
 
 			Calendar standingsDate = Calendar.getInstance();
 			standingsDate.setTime(selectedWeek.getDate());
@@ -393,9 +419,9 @@ public class PdfExportUtils {
 			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_2_GROUP_1)));
 			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_3_GROUP_1)));
 			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process("|")));
-			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_1_GROUP_1)));
-			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_2_GROUP_1)));
-			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_3_GROUP_1)));
+			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_4_GROUP_1)));
+			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_5_GROUP_1)));
+			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_6_GROUP_1)));
 
 			table.addCell(new BorderlessPdfPCell(boldSelectorNormal.process("")));
 			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process("&")));
@@ -411,9 +437,9 @@ public class PdfExportUtils {
 			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_2_GROUP_2)));
 			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_3_GROUP_2)));
 			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process("|")));
-			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_1_GROUP_2)));
-			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_2_GROUP_2)));
-			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_3_GROUP_2)));
+			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_4_GROUP_2)));
+			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_5_GROUP_2)));
+			table.addCell(new BorderlessPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(Constants.TEE_TIME_6_GROUP_2)));
 
 			table.addCell(new BorderBottomPdfPCell(PdfPCell.ALIGN_CENTER, boldSelectorNormal.process(""), 8));
 

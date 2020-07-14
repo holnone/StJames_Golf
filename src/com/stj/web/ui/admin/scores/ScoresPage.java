@@ -1,10 +1,11 @@
 package com.stj.web.ui.admin.scores;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.List;
-
+import com.stj.model.*;
+import com.stj.services.LeagueService;
+import com.stj.util.Constants;
+import com.stj.util.HoleUtils;
+import com.stj.web.ui.admin.base.AdminBasePage;
+import com.stj.web.wicket.form.input.LabelList;
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -14,28 +15,14 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.IChoiceRenderer;
-import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
-import com.stj.model.Course;
-import com.stj.model.GhostPlayer;
-import com.stj.model.MatchResults;
-import com.stj.model.Player;
-import com.stj.model.Round;
-import com.stj.model.Season;
-import com.stj.model.Side;
-import com.stj.model.Team;
-import com.stj.model.TeamMatch;
-import com.stj.model.TheKnolls2019;
-import com.stj.model.Week;
-import com.stj.model.WeeklyScore;
-import com.stj.services.LeagueService;
-import com.stj.util.Constants;
-import com.stj.util.HoleUtils;
-import com.stj.web.ui.admin.base.AdminBasePage;
-import com.stj.web.wicket.form.input.LabelList;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.List;
 
 public class ScoresPage extends AdminBasePage {
 	private static final long serialVersionUID = 1L;
@@ -54,7 +41,7 @@ public class ScoresPage extends AdminBasePage {
 
 	private Course matchCourse;
 
-	private TheKnolls2019 theKnolls2019;
+	private Course defaultCourse;
 
 	private Team team1;
 	private Team team2;
@@ -178,8 +165,8 @@ public class ScoresPage extends AdminBasePage {
 			}
 		}
 
-		theKnolls2019 = leagueService.getTheKnolls2019();
-		courseChoices.add(theKnolls2019);
+		defaultCourse = leagueService.getTheKnolls2019();
+		courseChoices.add(defaultCourse);
 
 		renderContent();
 		resetMatchups();
@@ -204,7 +191,7 @@ public class ScoresPage extends AdminBasePage {
 	private void resetMatches() {
 		matchCourse = selectedTeamMatch == null ? null : selectedTeamMatch.getCourse();
 		if (matchCourse == null && selectedTeamMatch != null) {
-			matchCourse = theKnolls2019;
+			matchCourse = defaultCourse;
 			selectedTeamMatch.setCourse(matchCourse);
 		}
 		team1 = selectedTeamMatch != null ? selectedTeamMatch.getTeam1().getTeam() : null;
