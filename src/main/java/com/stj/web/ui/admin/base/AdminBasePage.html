@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
+    <head>  
+        <title>St James Friday Night Golf League Administration</title>
+    </head>
+    <body>
+    	<div id="outer_wrapper">
+	    	<table class="content" border="0" cellspacing="0" cellpadding="0" width="900" align="center">
+		    		<tr>
+		    			<td align="center" height="60" id="framecontent">
+		    				St. James Friday Night Golf League Administration
+						</td>
+		    		</tr>
+		    		<tr>
+		    			<td id="tabs">
+		    				<ul>
+								<li id="scheduleTab"><a href="./admin/schedule" title="Schedule"><span>Schedule</span></a></li>
+							    <li id="rosterTab"><a href="./admin/roster" title="Roster"><span>Roster</span></a></li>
+							    <li id="inactivePlayersTab"><a href="./admin/inactivePlayers" title="Inactive Players"><span>Inactive Players</span></a></li>
+							    <li id="scoresTab"><a href="./admin/scores" title="Scores"><span>Scores</span></a></li>
+							    <li id="settingsTab"><a href="./admin/settings" title="Settings"><span>Settings</span></a></li>
+							    <li><a href="" title="St. James Golf"><span>St. James Golf Home</span></a></li>
+							    <li><a wicket:id="logout"><span>Logout</span></a></li>
+							</ul>
+		    			</td>
+		    		</tr>
+		    		<tr>
+		    			<td id="maincontent">
+		    				<table class="content" border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+	    					<tr>
+	    						<td>
+	    							<div wicket:id="feedbackPanel" class="feedback"></div>
+	    						</td>
+	    					</tr>
+	    					<tr>
+	    						<td id="child">
+    								<wicket:child/>
+	    						</td>
+	    					</tr>
+	    				</table>
+	    			</td>
+	    		</tr>
+			</table>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+plugins {
+    id 'java-library'
+    id 'groovy'
+    id 'war'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.apache.commons:commons-lang3:3.10"
+    compile "joda-time:joda-time:2.10.6"
+    compile "org.projectlombok:lombok:1.18.12"
+    compile "javax.mail:javax.mail-api:1.6.2"
+    compile "com.itextpdf:itextpdf:5.5.13.1"
+    compile "org.aspectj:aspectjweaver:1.9.5"
+    compile "javax.servlet:javax.servlet-api:4.0.1"
+    compile "org.jfree:jfreechart:1.5.0"
+    compile "net.bull.javamelody:javamelody-core:1.83.0"
+
+    //hibernate
+    compile "org.hibernate:hibernate-core:$hibernateVersion"
+
+    //spring
+    compile "org.springframework:spring-beans:$springVersion"
+    compile "org.springframework:spring-context:$springVersion"
+    compile "org.springframework:spring-orm:5.2.7.RELEASE"
+    compile "org.springframework:spring-web:5.2.7.RELEASE"
+    compile "org.springframework.security:spring-security-core:5.3.3.RELEASE"
+
+    //wicket
+    compile "org.apache.wicket:wicket-auth-roles:$wicketVersion"
+    compile "org.apache.wicket:wicket-core:$wicketVersion"
+    compile "org.apache.wicket:wicket-extensions:$wicketVersion"
+    compile "org.apache.wicket:wicket-spring:$wicketVersion"
+}

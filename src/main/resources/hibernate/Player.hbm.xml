@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.stj.model">
+	<class name="Player" table="STJ_PLAYER">
+		<id name="id" column="PLAYER_ID" type="integer" unsaved-value="null">
+			<generator class="native" />
+		</id>
+
+		<property name="createdDate" type="timestamp" column="CRTN_DT" />
+
+		<property name="createdUserId" type="string" length="8" column="CRTN_USER_ID" />
+
+		<property name="lastUpdatedDate" type="timestamp" column="LAST_UPTD_DT" />
+
+		<property name="lastUpdatedUserId" type="string" length="8" column="LAST_UPTD_USER_ID" />
+
+		<property name="active" type="yes_no" length="1" column="ACTIVE_FLAG" />
+		
+		<component name="playerName" >
+			<property name="firstName" column="FIRST_NAME" type="string" />
+			<property name="lastName" column="LAST_NAME" type="string" />
+		</component>
+		
+		<property name="skinsStartDate" type="date" column="SKINS_START_DATE" />
+		
+		<property name="seniorStartDate" type="date" column="SENIOR_START_DATE" />
+		
+		<many-to-one name="team" column="TEAM_ID" class="Team" lazy="false"/>
+
+		<set name="scores" cascade="all-delete-orphan" lazy="false">
+			<key column="PLAYER_ID"></key>
+			<one-to-many class="WeeklyScore" />
+		</set>
+		
+		<set name="preRounds" cascade="all-delete-orphan" lazy="false">
+			<key column="PLAYER_ID"></key>
+			<one-to-many class="PreRound" />
+		</set>
+
+	</class>
+</hibernate-mapping>

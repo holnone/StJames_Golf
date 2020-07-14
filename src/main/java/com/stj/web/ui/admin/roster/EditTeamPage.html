@@ -1,0 +1,38 @@
+<wicket:extend xmlns:wicket="http://wicket.apache.org">
+	<form wicket:id="form">
+		<table border="0" cellspacing="0" cellpadding="0" align="center">
+			<tr>
+				<td colspan="3">
+					<label><b>Team Number:</b></label>
+					<input type="text" wicket:id="teamNumberText" style="width: 30px;" maxlength="2"/>
+					<label><b>Team Name:</b></label>
+					<input type="text" wicket:id="teamNameText" style="width: 150px;" maxlength="30"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<select wicket:id="originals" size="7" style="width:200px;"></select>
+				</td>
+				<td valign="middle">
+					<input wicket:id="add" type="button" value="&rarr;" />
+					<br/>
+					<input wicket:id="remove" type="button" value="&larr;" />
+				</td>
+				<td>
+					<select wicket:id="destinations" size="7" style="width:200px;"></select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<a wicket:id="newPlayerLink"><b>Add New Player</b></a>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">
+					<input type="submit" value="Save" wicket:id="saveButton" />
+					<input type="button" value="Cancel" wicket:id="cancelButton" />
+				</td>
+			</tr>
+		</table>
+	</form>
+</wicket:extend>
