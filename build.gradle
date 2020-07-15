@@ -4,6 +4,10 @@ plugins {
     id 'war'
 }
 
+sourceSets.main.resources {
+    srcDir file('src/main/java') exclude '*/java'
+}
+
 repositories {
     jcenter()
     mavenCentral()
@@ -11,6 +15,7 @@ repositories {
 
 dependencies {
     compile "org.apache.commons:commons-lang3:3.10"
+    compile "org.apache.commons:commons-dbcp2:2.7.0"
     compile "joda-time:joda-time:2.10.6"
     compile "org.projectlombok:lombok:1.18.12"
     compile "javax.mail:javax.mail-api:1.6.2"
@@ -19,6 +24,8 @@ dependencies {
     compile "javax.servlet:javax.servlet-api:4.0.1"
     compile "org.jfree:jfreechart:1.5.0"
     compile "net.bull.javamelody:javamelody-core:1.83.0"
+    compile "org.slf4j:slf4j-api:1.7.30"
+    compile "mysql:mysql-connector-java:8.0.21"
 
     //hibernate
     compile "org.hibernate:hibernate-core:$hibernateVersion"
@@ -29,6 +36,8 @@ dependencies {
     compile "org.springframework:spring-orm:5.2.7.RELEASE"
     compile "org.springframework:spring-web:5.2.7.RELEASE"
     compile "org.springframework.security:spring-security-core:5.3.3.RELEASE"
+    compile "org.springframework.security:spring-security-config:5.3.3.RELEASE"
+    compile "org.springframework.security:spring-security-web:5.3.3.RELEASE"
 
     //wicket
     compile "org.apache.wicket:wicket-auth-roles:$wicketVersion"
