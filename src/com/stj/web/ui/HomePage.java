@@ -134,19 +134,6 @@ public class HomePage extends BasePage {
 			item.add(new Label("teeTime5", week.getBackNineTeeTime2() != null ? week.getBackNineTeeTime2().toString() : null));
 			item.add(new Label("teeTime6", week.getBackNineTeeTime3() != null ? week.getBackNineTeeTime3().toString() : null));
 
-			//Add League Outing label
-			if (matchDate.isEqual(new DateTime(2020, 7, 10, 0, 0, 0, 0))) {
-				item = new WebMarkupContainer(round1Repeater.newChildId());
-				item.setOutputMarkupId(true);
-				round1Repeater.add(item);
-				item.add(new Label("weekDate", Constants.DATE_FORMAT.format(new DateTime(2020, 7, 11, 0, 0, 0, 0).toDate())));
-				item.add(new Label("teeTime1", "WOOD"));
-				item.add(new Label("teeTime2", "LAND"));
-				item.add(new Label("teeTime3", "HILLS"));
-				item.add(new Label("teeTime4", "OUTING"));
-				item.add(new Label("teeTime5", "8:00 AM"));
-				item.add(new Label("teeTime6", "START"));
-			}
 			//Add Easter weekend label
 			if (matchDate.isEqual(new DateTime(2017, 4, 7, 0, 0, 0, 0))) {
 				item = new WebMarkupContainer(round1Repeater.newChildId());
@@ -167,10 +154,12 @@ public class HomePage extends BasePage {
 		weekList = new ArrayList<Week>(round2.getWeeks());
 		Collections.sort(weekList);
 		for (Week week : weekList) {
-			WebMarkupContainer item;
-			item = new WebMarkupContainer(round2Repeater.newChildId());
-			item.setOutputMarkupId(true);
-			matchDate = new DateTime(week.getDate());
+            matchDate = new DateTime(week.getDate());
+
+            WebMarkupContainer item;
+            item = new WebMarkupContainer(round2Repeater.newChildId());
+            item.setOutputMarkupId(true);
+            matchDate = new DateTime(week.getDate());
 			if (setCurrent && (!matchDate.isBeforeNow() || matchDate.isEqual(now))) {
 				item.add(AttributeModifier.replace("class", "current"));
 				setCurrent = false;
@@ -184,7 +173,20 @@ public class HomePage extends BasePage {
 			item.add(new Label("teeTime4", week.getBackNineTeeTime1() != null ? week.getBackNineTeeTime1().toString() : null));
 			item.add(new Label("teeTime5", week.getBackNineTeeTime2() != null ? week.getBackNineTeeTime2().toString() : null));
 			item.add(new Label("teeTime6", week.getBackNineTeeTime3() != null ? week.getBackNineTeeTime3().toString() : null));
-			
+
+			//Add League Outing label
+			if (matchDate.isEqual(new DateTime(2021, 7, 9, 0, 0, 0, 0))) {
+				item = new WebMarkupContainer(round2Repeater.newChildId());
+				item.setOutputMarkupId(true);
+				round2Repeater.add(item);
+				item.add(new Label("weekDate", Constants.DATE_FORMAT.format(new DateTime(2021, 7, 10, 0, 0, 0, 0).toDate())));
+				item.add(new Label("teeTime1", "WOOD"));
+				item.add(new Label("teeTime2", "LAND"));
+				item.add(new Label("teeTime3", "HILLS"));
+				item.add(new Label("teeTime4", "OUTING"));
+				item.add(new Label("teeTime5", "8:00 AM"));
+				item.add(new Label("teeTime6", "START"));
+			}
 		}
 
 		add(new Label("playoffDate", Constants.DATE_FORMAT.format(matchDate.plusWeeks(1).toDate())));

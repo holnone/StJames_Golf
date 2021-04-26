@@ -14,7 +14,7 @@
 
 		<property name="lastUpdatedUserId" type="string" length="8" column="LAST_UPTD_USER_ID" />
 
-		<property name="overrideScore" type="integer" column="OVERRIDE_SCORE" />
+		<property name="overrideScore" type="big_decimal" column="OVERRIDE_SCORE" />
 		
 		<many-to-one name="team" column="TEAM_ID" class="Team" lazy="false"/>
 		

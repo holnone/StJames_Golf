@@ -8,18 +8,31 @@
 
 	<property name="build.dir" value="build" />
 	<property name="deploy.dir" value="deploy" />
+	<property name="src.dir" value="src" />
 
 	<property name="classes.dir" value="${build.dir}/production/stjames" />
-	<property name="webapp.dir" value="WebContent/WEB-INF" />
+	<property name="webapp.dir" value="WebContent" />
+	<property name="resources.dir" value="resources" />
 
 	<target name="deploy">
-		<mkdir dir="${deploy.dir}/classes" />
+		<mkdir dir="${deploy.dir}/WEB-INF/classes" />
 
-		<copy todir="${deploy.dir}/classes">
+		<copy todir="${deploy.dir}/WEB-INF/classes">
 			<fileset dir="${classes.dir}" />
 		</copy>
+
 		<copy todir="${deploy.dir}">
 			<fileset dir="${webapp.dir}" />
+		</copy>
+
+		<copy todir="${deploy.dir}/WEB-INF/classes">
+			<fileset dir="${resources.dir}" />
+		</copy>
+
+		<copy todir="${deploy.dir}/WEB-INF/classes">
+			<fileset dir="${src.dir}" >
+				<exclude name="**/*.java" />
+			</fileset>
 		</copy>
 	</target>
 

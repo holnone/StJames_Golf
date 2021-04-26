@@ -68,12 +68,12 @@ public class EditWeekPage extends AdminBasePage {
 		form.add(new Label("frontNineTeeTime3Group1", Constants.TEE_TIME_3_GROUP_1));
 		form.add(new Label("frontNineTeeTime3Group2", Constants.TEE_TIME_3_GROUP_2));
 		
-		form.add(new Label("backNineTeeTime1Group1", Constants.TEE_TIME_1_GROUP_1));
-		form.add(new Label("backNineTeeTime1Group2", Constants.TEE_TIME_1_GROUP_2));
-		form.add(new Label("backNineTeeTime2Group1", Constants.TEE_TIME_2_GROUP_1));
-		form.add(new Label("backNineTeeTime2Group2", Constants.TEE_TIME_2_GROUP_2));
-		form.add(new Label("backNineTeeTime3Group1", Constants.TEE_TIME_3_GROUP_1));
-		form.add(new Label("backNineTeeTime3Group2", Constants.TEE_TIME_3_GROUP_2));
+		form.add(new Label("backNineTeeTime1Group1", Constants.TEE_TIME_4_GROUP_1));
+		form.add(new Label("backNineTeeTime1Group2", Constants.TEE_TIME_4_GROUP_2));
+		form.add(new Label("backNineTeeTime2Group1", Constants.TEE_TIME_5_GROUP_1));
+		form.add(new Label("backNineTeeTime2Group2", Constants.TEE_TIME_5_GROUP_2));
+		form.add(new Label("backNineTeeTime3Group1", Constants.TEE_TIME_6_GROUP_1));
+		form.add(new Label("backNineTeeTime3Group2", Constants.TEE_TIME_6_GROUP_2));
 		
 		form.add(buildDropDown(FRONT_NINE_TEE_TIME1_TEAM1, "frontNineTeeTime1.team1.team").add(new FocusComponentBehavior()));
 		form.add(buildDropDown(FRONT_NINE_TEE_TIME1_TEAM2, "frontNineTeeTime1.team2.team"));

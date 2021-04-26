@@ -29,10 +29,16 @@ public interface Constants {
 
 	/*public final static String TEE_TIME_1_GROUP_1 = "4:45";
 	public final static String TEE_TIME_1_GROUP_2 = "4:53";
-	public final static String TEE_TIME_2_GROUP_1 = "5:01";
-	public final static String TEE_TIME_2_GROUP_2 = "5:09";
-	public final static String TEE_TIME_3_GROUP_1 = "5:17";
-	public final static String TEE_TIME_3_GROUP_2 = "5:25";*/
+	public final static String TEE_TIME_2_GROUP_1 = "5:00";
+	public final static String TEE_TIME_2_GROUP_2 = "5:07";
+	public final static String TEE_TIME_3_GROUP_1 = "5:15";
+	public final static String TEE_TIME_3_GROUP_2 = "5:22";
+	public final static String TEE_TIME_4_GROUP_1 = "4:45";
+	public final static String TEE_TIME_4_GROUP_2 = "4:53";
+	public final static String TEE_TIME_5_GROUP_1 = "5:00";
+	public final static String TEE_TIME_5_GROUP_2 = "5:07";
+	public final static String TEE_TIME_6_GROUP_1 = "5:15";
+	public final static String TEE_TIME_6_GROUP_2 = "5:22";*/
 
 	/*public final static String TEE_TIME_1_GROUP_1 = "4:30";
 	public final static String TEE_TIME_1_GROUP_2 = "4:40";

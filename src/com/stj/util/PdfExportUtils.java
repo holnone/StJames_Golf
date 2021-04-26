@@ -155,16 +155,16 @@ public class PdfExportUtils {
 			table.addCell(new BorderlessPdfPCell(underlineSelectorLarge.process("BACK")));
 
 			table.addCell(new BorderlessPdfPCell(selectorLarge.process(Constants.TEE_TIME_1_GROUP_1 + " & " + Constants.TEE_TIME_1_GROUP_2)));
-			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getFrontNineTeeTime1().toString())));
-			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getBackNineTeeTime1().toString())));
+			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getFrontNineTeeTime1() != null ? selectedWeek.getFrontNineTeeTime1().toString() : "")));
+			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getBackNineTeeTime1() != null ? selectedWeek.getBackNineTeeTime1().toString() : "")));
 
 			table.addCell(new BorderlessPdfPCell(selectorLarge.process(Constants.TEE_TIME_2_GROUP_1 + " & " + Constants.TEE_TIME_2_GROUP_2)));
-			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getFrontNineTeeTime2().toString())));
-			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getBackNineTeeTime2().toString())));
+			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getFrontNineTeeTime2() != null ? selectedWeek.getFrontNineTeeTime2().toString() : "")));
+			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getBackNineTeeTime2() != null ? selectedWeek.getBackNineTeeTime2().toString() : "")));
 
 			table.addCell(new BorderlessPdfPCell(selectorLarge.process(Constants.TEE_TIME_3_GROUP_1 + " & " + Constants.TEE_TIME_3_GROUP_2)));
-			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getFrontNineTeeTime3().toString())));
-			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getBackNineTeeTime3().toString())));
+			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getFrontNineTeeTime3() != null ? selectedWeek.getFrontNineTeeTime3().toString() : "")));
+			table.addCell(new BorderlessPdfPCell(selectorLarge.process(selectedWeek.getBackNineTeeTime3() != null ? selectedWeek.getBackNineTeeTime3().toString() : "")));
 
 			//Sundays
             /*float[] colWidths = { 3f, 1f };
@@ -228,7 +228,7 @@ public class PdfExportUtils {
 			table = new PdfPTable(colWidths);
 			table.setHorizontalAlignment(PdfPTable.ALIGN_LEFT);
 
-			colWidths = new float[] { 1f, 1f };
+			colWidths = new float[] { 1.5f, 1f };
 			PdfPTable standingsTable1 = new PdfPTable(colWidths);
 			standingsTable1.addCell(new BorderlessPdfPCell(underlineSelectorNormal.process(roundNumber + " Round, Week #" + weekNumber), 2));
 			for (int i = 0; i < 6; i++) {
@@ -238,7 +238,7 @@ public class PdfExportUtils {
 				standingsTable1.addCell(new BorderlessPdfPCell(selectorNormal.process(pointsFormat.format(team.getPoints()))));
 			}
 
-			colWidths = new float[] { 1f, 1f };
+			colWidths = new float[] { 1.5f, 1f };
 			PdfPTable standingsTable2 = new PdfPTable(colWidths);
 			standingsTable2.addCell(new BorderlessPdfPCell(underlineSelectorNormal.process(" "), 2));
 			for (int i = 6; i < 12; i++) {
@@ -291,7 +291,7 @@ public class PdfExportUtils {
 			para.add(selectorNormal.process("HANDICAPS BASED ON LAST 5 SCORES AT 90% OF STROKES OVER PAR."));
 			document.add(para);
 
-			colWidths = new float[] { 2.5f, 2.5f, 2.5f };
+			colWidths = new float[] { 2.5f, 3.5f, 2.5f };
 			PdfPTable rosterTable = new PdfPTable(colWidths);
 			rosterTable.setHorizontalAlignment(Element.ALIGN_LEFT);
 

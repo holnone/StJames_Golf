@@ -1,11 +1,13 @@
 package com.stj.model;
 
+import java.math.BigDecimal;
+
 public class TeamScore extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
 
 	private Team team;
-	private Integer overrideScore;
+	private BigDecimal overrideScore;
 	private WeeklyScore matchA;
 	private WeeklyScore matchB;
 	private WeeklyScore matchC;
@@ -20,11 +22,11 @@ public class TeamScore extends BaseEntity {
 		this.team = team;
 	}
 
-	public Integer getOverrideScore() {
+	public BigDecimal getOverrideScore() {
 		return overrideScore;
 	}
 
-	public void setOverrideScore(Integer overrideScore) {
+	public void setOverrideScore(BigDecimal overrideScore) {
 		this.overrideScore = overrideScore;
 	}
 

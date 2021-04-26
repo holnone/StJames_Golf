@@ -154,8 +154,8 @@ public class Round extends BaseEntity implements Comparable<Round> {
 				team2Points = new Double(0);
 
 				if (week.getFrontNineTeeTime1().isOverride()) {
-					team1Points = new Double(week.getFrontNineTeeTime1().getTeam1().getOverrideScore());
-					team2Points = new Double(week.getFrontNineTeeTime1().getTeam2().getOverrideScore());
+					team1Points = new Double(week.getFrontNineTeeTime1().getTeam1().getOverrideScore().doubleValue());
+					team2Points = new Double(week.getFrontNineTeeTime1().getTeam2().getOverrideScore().doubleValue());
 				} else {
 					matchAResults = week.getFrontNineTeeTime1().getMatchAResults();
 					matchBResults = week.getFrontNineTeeTime1().getMatchBResults();
@@ -211,8 +211,8 @@ public class Round extends BaseEntity implements Comparable<Round> {
 				team2Points = new Double(0);
 
 				if (week.getFrontNineTeeTime2().isOverride()) {
-					team1Points = new Double(week.getFrontNineTeeTime2().getTeam1().getOverrideScore());
-					team2Points = new Double(week.getFrontNineTeeTime2().getTeam2().getOverrideScore());
+					team1Points = new Double(week.getFrontNineTeeTime2().getTeam1().getOverrideScore().doubleValue());
+					team2Points = new Double(week.getFrontNineTeeTime2().getTeam2().getOverrideScore().doubleValue());
 				} else {
 					matchAResults = week.getFrontNineTeeTime2().getMatchAResults();
 					matchBResults = week.getFrontNineTeeTime2().getMatchBResults();
@@ -268,8 +268,8 @@ public class Round extends BaseEntity implements Comparable<Round> {
 				team2Points = new Double(0);
 
 				if (week.getFrontNineTeeTime3().isOverride()) {
-					team1Points = new Double(week.getFrontNineTeeTime3().getTeam1().getOverrideScore());
-					team2Points = new Double(week.getFrontNineTeeTime3().getTeam2().getOverrideScore());
+					team1Points = new Double(week.getFrontNineTeeTime3().getTeam1().getOverrideScore().doubleValue());
+					team2Points = new Double(week.getFrontNineTeeTime3().getTeam2().getOverrideScore().doubleValue());
 				} else {
 					matchAResults = week.getFrontNineTeeTime3().getMatchAResults();
 					matchBResults = week.getFrontNineTeeTime3().getMatchBResults();
@@ -325,8 +325,8 @@ public class Round extends BaseEntity implements Comparable<Round> {
 				team2Points = new Double(0);
 
 				if (week.getBackNineTeeTime1().isOverride()) {
-					team1Points = new Double(week.getBackNineTeeTime1().getTeam1().getOverrideScore());
-					team2Points = new Double(week.getBackNineTeeTime1().getTeam2().getOverrideScore());
+					team1Points = new Double(week.getBackNineTeeTime1().getTeam1().getOverrideScore().doubleValue());
+					team2Points = new Double(week.getBackNineTeeTime1().getTeam2().getOverrideScore().doubleValue());
 				} else {
 					matchAResults = week.getBackNineTeeTime1().getMatchAResults();
 					matchBResults = week.getBackNineTeeTime1().getMatchBResults();
@@ -382,8 +382,8 @@ public class Round extends BaseEntity implements Comparable<Round> {
 				team2Points = new Double(0);
 
 				if (week.getBackNineTeeTime2().isOverride()) {
-					team1Points = new Double(week.getBackNineTeeTime2().getTeam1().getOverrideScore());
-					team2Points = new Double(week.getBackNineTeeTime2().getTeam2().getOverrideScore());
+					team1Points = new Double(week.getBackNineTeeTime2().getTeam1().getOverrideScore().doubleValue());
+					team2Points = new Double(week.getBackNineTeeTime2().getTeam2().getOverrideScore().doubleValue());
 				} else {
 					matchAResults = week.getBackNineTeeTime2().getMatchAResults();
 					matchBResults = week.getBackNineTeeTime2().getMatchBResults();
@@ -439,8 +439,8 @@ public class Round extends BaseEntity implements Comparable<Round> {
 				team2Points = new Double(0);
 
 				if (week.getBackNineTeeTime3().isOverride()) {
-					team1Points = new Double(week.getBackNineTeeTime3().getTeam1().getOverrideScore());
-					team2Points = new Double(week.getBackNineTeeTime3().getTeam2().getOverrideScore());
+					team1Points = new Double(week.getBackNineTeeTime3().getTeam1().getOverrideScore().doubleValue());
+					team2Points = new Double(week.getBackNineTeeTime3().getTeam2().getOverrideScore().doubleValue());
 				} else {
 					matchAResults = week.getBackNineTeeTime3().getMatchAResults();
 					matchBResults = week.getBackNineTeeTime3().getMatchBResults();

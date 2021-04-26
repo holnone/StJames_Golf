@@ -43,16 +43,16 @@ public class SchedulePage extends AdminBasePage {
 		add(new Label("frontNineTeeTime1Group1", Constants.TEE_TIME_1_GROUP_1));
 		add(new Label("frontNineTeeTime2Group1", Constants.TEE_TIME_2_GROUP_1));
 		add(new Label("frontNineTeeTime3Group1", Constants.TEE_TIME_3_GROUP_1));
-		add(new Label("backNineTeeTime1Group1", Constants.TEE_TIME_1_GROUP_1));
-		add(new Label("backNineTeeTime2Group1", Constants.TEE_TIME_2_GROUP_1));
-		add(new Label("backNineTeeTime3Group1", Constants.TEE_TIME_3_GROUP_1));
+		add(new Label("backNineTeeTime1Group1", Constants.TEE_TIME_4_GROUP_1));
+		add(new Label("backNineTeeTime2Group1", Constants.TEE_TIME_5_GROUP_1));
+		add(new Label("backNineTeeTime3Group1", Constants.TEE_TIME_6_GROUP_1));
 		
 		add(new Label("frontNineTeeTime1Group2", Constants.TEE_TIME_1_GROUP_2));
 		add(new Label("frontNineTeeTime2Group2", Constants.TEE_TIME_2_GROUP_2));
 		add(new Label("frontNineTeeTime3Group2", Constants.TEE_TIME_3_GROUP_2));
-		add(new Label("backNineTeeTime1Group2", Constants.TEE_TIME_1_GROUP_2));
-		add(new Label("backNineTeeTime2Group2", Constants.TEE_TIME_2_GROUP_2));
-		add(new Label("backNineTeeTime3Group2", Constants.TEE_TIME_3_GROUP_2));
+		add(new Label("backNineTeeTime1Group2", Constants.TEE_TIME_4_GROUP_2));
+		add(new Label("backNineTeeTime2Group2", Constants.TEE_TIME_5_GROUP_2));
+		add(new Label("backNineTeeTime3Group2", Constants.TEE_TIME_6_GROUP_2));
 		
 		List<Round> list = new ArrayList<Round>(season.getRounds());
 		Collections.sort(list);
